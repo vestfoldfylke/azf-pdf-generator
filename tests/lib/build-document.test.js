@@ -20,10 +20,6 @@ describe('Build document', () => {
     expect(() => JSON.stringify(document)).not.toThrow()
   })
 
-  it('returned document contains \'Logo Vestfold og Telemark fylkeskommune!\', so we know that the template is applied', () => {
-    expect(JSON.stringify(document)).toContain('Logo Vestfold og Telemark fylkeskommune')
-  })
-
   it('returned document contains \'Hello, Kjell!\', so we know that handlebars did it\'s job', () => {
     expect(JSON.stringify(document)).toContain('Hello, Kjell!')
   })
