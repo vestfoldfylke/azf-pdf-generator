@@ -19,9 +19,9 @@ info:
 
 ## 1. Informasjon om din kontrakt
 
-Gratulerer, Vestfold og Telemark fylkeskommune har nå godkjent din kontrakt/avtale om vg3 fagopplæring i skole. Du kan se og laste ned kontrakten ved å gå inn på [https://www.vigo.no/](https://www.vigo.no/), eller laste ned vigo appen.
+Gratulerer, Vestfold fylkeskommune har nå godkjent din kontrakt/avtale om vg3 fagopplæring i skole. Du kan se og laste ned kontrakten ved å gå inn på [https://www.vigo.no/](https://www.vigo.no/), eller laste ned vigo appen.
 
-Bedriften/opplæringskontoret eller skolen du har tegnet kontrakt/avtale om fagopplæring i skole med, vil følge deg opp i det daglige. Dersom du har behov for å få informasjon eller snakke med andre, kan du kontakte oss i fylkeskommunen. Vi har kontorer på Fylkeshuset i Tønsberg og Skien.
+Bedriften/opplæringskontoret eller skolen du har tegnet kontrakt/avtale om fagopplæring i skole med, vil følge deg opp i det daglige. Dersom du har behov for å få informasjon eller snakke med andre, kan du kontakte oss i fylkeskommunen. Vi har kontor på Fylkeshuset i Tønsberg.
 
 Nedenfor er noen punkter vi mener det er viktig at du er kjent med:
 - Din lærebedrift/opplæringskontor/skole skal ha utarbeidet en intern plan for opplæring. Denne planen skal du gjøre deg kjent med. 
@@ -33,7 +33,7 @@ Nedenfor er noen punkter vi mener det er viktig at du er kjent med:
 - Fag-/svenneprøven/kompetanseprøven skal som hovedregel avlegges før utløpet av læretiden (tidligst 3 måneder før utløp). Hvis det er behov for forlengelse av læretid uten tilskudd, må lærebedriften søke om det før læretiden er utløpt. (Forskrift til oppl.§3-46)
 - Om forlengelse ikke er søkt om eller innvilget, og prøve ikke er avlagt, avsluttes kontrakten/avtalen om vg3 fagopplæring i skole uten avlagt prøve. Du må da gå opp som praksiskandidat ved å opparbeide deg nok praksis. Du må som hovedregel også ta vg3 Tverrfaglig eksamen. Du må ordne prøvested og betale fag-/svenneprøven selv.
 
-Læreforholdet er underlagt opplæringsloven med forskrift og lokal forskrift om inntak formidling i Vestfold og Telemark fylkeskommune. Disse finner du på [https://lovdata.no/](https://lovdata.no/)
+Læreforholdet er underlagt opplæringsloven med forskrift og lokal forskrift om inntak formidling i Vestfold fylkeskommune. Disse finner du på [https://lovdata.no/](https://lovdata.no/)
 
 Hvis du skal søke lån eller stipend, finner du informasjon på [https://www.lanekassen.no/](https://www.lanekassen.no/)
 
@@ -41,13 +41,13 @@ Kontakt oss gjerne. Vi er tilgjengelige på telefon mellom 09:00 og 14:00. Du ka
 - &nbsp;**15. mai til 14. september: kl. 08:00-15:00**
 - &nbsp;**15. september til 14 mai: kl. 08:00-15:45**
 
-Telefonnummeret til fylkeskommunen er 35917000
-<br/>Epost: [fagopplaring@vtfk.no](mailto:fagopplaring@vtfk.no)
-<br/>På [hjemmesiden vår](https://www.vtfk.no/meny/tjenester/opplaring-og-folkehelse/opplaring-i-bedrift/vare-samarbeidspartnere/ansatte/fagradgiver-programomrader/) finner du oversikt over hvem i fylkeskommunen som er ansvarlig for ditt fag.
+Telefonnummeret til fylkeskommunen er 33 34 40 00
+<br/>Epost: [fagopplaring@vestfoldfylke.no](mailto:fagopplaring@vestfoldfylke.no)
+<br/>På [hjemmesiden vår](https://www.vestfoldfylke.no) finner du oversikt over hvem i fylkeskommunen som er ansvarlig for ditt fag.
 
 
 ## 2. Informasjon om elev- og lærlingombudet
-På [hjemmesiden](https://www.vtfk.no/meny/tjenester/opplaring-og-folkehelse/elev-og-larling-mobbeombud/) finner du informasjon om elev- og lærlingombud.
+På [hjemmesiden](https://www.vestfoldfylke.no) finner du informasjon om elev- og lærlingombud.
 
 ### Hva kan elev- og lærlingombudet gjøre for deg?
 Ombudet er der for å ivareta interessene til elever, lærlinger, praksisbrevkandidater, lærekandidater og ungdom i målgruppen til Oppfølgingstjenesten.
@@ -69,19 +69,13 @@ Gjennom god dialog og samarbeid ønsker ombudet å forebygge, håndtere misforst
 **Elev- og lærlingombud**
 <br/>Geir Eidsvåg
 <br/>**Tlf:** 481 79 742 / 35917000
-<br/>**E-post:** [geir.eidsvaag@vtfk.no](mailto:geir.eidsvaag@vtfk.no)
-
-#### På fylkeshuset i Skien
-**Elev- og lærlingombud**
-<br/>Magnus Bekkevold
-<br/>**Tlf:** 416 61 589/35917000
-<br/>**E-post:** [magnus.bekkevold@vtfk.no](mailto:magnus.bekkevold@vtfk.no)
+<br/>**E-post:** [geir.eidsvaag@vestfoldfylke.no](mailto:geir.eidsvaag@vestfoldfylke.no)
 
 <br/>
 
 Med hilsen
 
 {{ department }}<br />
-[fagopplaring@vtfk.no](mailto:fagopplaring@vtfk.no)<br/>
+[fagopplaring@vestfoldfylke.no](mailto:fagopplaring@vestfoldfylke.no)<br/>
 
 *Dokumentet er elektronisk godkjent og sendes uten signatur.*
