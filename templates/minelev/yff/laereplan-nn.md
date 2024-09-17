@@ -46,16 +46,14 @@ Timetalet er gitt i einingar på 60 minutt. I skuletimar på 45 minutt vert dett
   Lokal læreplan for {{ student.name }} for skuleåret {{ content.year }}
 </h2>
 
-{{#each content.utplasseringer}}
-  **{{name}}**
+**{{content.utplassering.name}}**
 
-{{#each maal}}
+{{#each content.utplassering.maal}}
 
 - {{#if programomraade}}**Programområde:** {{uppercaseFirst programomraade.tittel.nn}}<br />{{/if}}
   {{#if grep}}**Kompetansemål:** {{uppercaseFirst grep.tittel.nn}}<br />{{/if}}
   {{#if arbeidsoppgaver}}**Arbeidsoppgåver:** {{uppercaseFirst arbeidsoppgaver}}<br />{{/if}}
 
-{{/each}}
 {{/each}}
 
 <br />

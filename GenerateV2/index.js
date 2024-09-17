@@ -6,7 +6,7 @@ const { decodeBase64 } = require('@vtfk/utilities')
 const getDocumentDefinition = require('../lib/document-definitions/index')
 const { logConfig, logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
-const Sjablong = require('sjablong')
+const Sjablong = require('@vtfk/sjablong')
 const merge = require('lodash.merge')
 const fs = require('fs')
 

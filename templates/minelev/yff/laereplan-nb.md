@@ -44,16 +44,14 @@ Timetallet er oppgitt i 60 minutters enheter. I 45 minutters skoletimer utgjør 
   Lokal læreplan for {{ student.name }} for skoleåret {{ content.year }}
 </h2>
 
-{{#each content.utplasseringer}}
-  **{{name}}**
+**{{content.utplassering.name}}**
 
-{{#each maal}}
+{{#each content.utplassering.maal}}
 
 - {{#if programomraade}}**Programområde:** {{uppercaseFirst programomraade.tittel.nb}}<br />{{/if}}
   {{#if grep}}**Kompetansemål:** {{uppercaseFirst grep.tittel.nb}}<br />{{/if}}
   {{#if arbeidsoppgaver}}**Arbeidsoppgaver:** {{uppercaseFirst arbeidsoppgaver}}<br />{{/if}}
 
-{{/each}}
 {{/each}}
 
 <br />

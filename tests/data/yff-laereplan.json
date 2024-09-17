@@ -30,7 +30,7 @@
       "zipPlace": "Oslo"
     },
     "content": {
-      "utplasseringer": [{
+      "utplassering": {
         "id": "5d7f29d059e31d0007cc9ff5",
         "name": "Norges røde kors",
         "maal": [{
@@ -119,7 +119,7 @@
           },
           "arbeidsoppgaver": "lede morgentrimmen"
         }]
-      }],
+      },
       "year": "2020/2021"
     },
     "teacher": {
