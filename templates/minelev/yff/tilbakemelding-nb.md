@@ -23,7 +23,7 @@ footer:
 
 # Tilbakemelding etter utplassering hos {{ bedrift.navn }}
 
-{{ student.name }} i {{ student.level }} på {{ school.name }} har vært på utplassering hos {{ bedrift.navn }}. Utplasseringen har foregått i perioden {{ utplassering.fraDato }} - {{ utplassering.tilDato }} skoleåret {{ content.year }}.
+{{ student.name }} i {{ utplassering.level }} på {{ school.name }} har vært på utplassering hos {{ bedrift.navn }}. Utplasseringen har foregått i perioden {{ utplassering.fraDato }} - {{ utplassering.tilDato }} skoleåret {{ content.year }}.
 
 ## Kompetansemål og arbeidsoppgaver
 
@@ -36,7 +36,16 @@ footer:
 ## Virksomhetens inntrykk og tilbakemelding til lærer
 
 {{#each content.evalueringsdata}}
-{{#if (and score (ne score 0))}}
+{{#if (and score (ne score '0'))}}
+
+- {{#if title.nb}}{{title.nb}}{{else}}{{title}}{{/if}}<br />
+  **Måloppnåelse:** {{uppercaseFirst score }}
+
+{{/if}}
+{{/each}}
+
+{{#each content.ordenatferd}}
+{{#if (and score (ne score '0'))}}
 
 - {{#if title.nb}}{{title.nb}}{{else}}{{title}}{{/if}}<br />
   **Måloppnåelse:** {{uppercaseFirst score }}

@@ -5,76 +5,89 @@
   "data": {
     "preview": true,
     "created": {
-      "timestamp": 1606252264318,
-      "createdBy": "tes0101"
+      "date": "2024-09-20T11:22:00.011Z",
+      "timestamp": 1726831320011,
+      "createdBy": {
+        "principalName": "demo.spokelse@telemarkfylke.no",
+        "principalId": "12345-4378493-fjdiofjd",
+        "name": "Demo Spøkelse"
+      }
     },
-    "modified": [{
-      "timestamp": 1606252264318,
-      "modifiedBy": "tes0101"
-    }],
+    "modified": {
+      "date": "2024-09-20T11:22:00.011Z",
+      "timestamp": "2024-09-20T11:22:00.011Z",
+      "modifiedBy": {
+        "principalName": "demo.spokelse@telemarkfylke.no",
+        "principalId": "12345-4378493-fjdiofjd",
+        "name": "Demo Spøkelse"
+      }
+    },
+    "documentTypeId": "yff-tilbakemelding",
+    "title": "YFF - Tilbakemelding på utplassering",
     "type": "yff",
-    "variant": "bekreftelse",
+    "variant": "tilbakemelding",
     "student": {
-      "username": "bra2001",
-      "name": "Brage Dahl",
-      "firstName": "Brage",
-      "lastName": "Dahl",
-      "mobile": "815 49 300",
-      "mail": "bra2001@skole.vtfk.no",
-      "classId": "KRAVS:TEST",
-      "level": "VG1"
+      "upn": "ele0102@skole.telemarkfylke.no",
+      "feidenavn": "ele0102@telemarkfylke.no",
+      "elevnummer": "12345678",
+      "name": "Elev Elevesen",
+      "firstName": "Elev",
+      "lastName": "Elevesen",
+      "birthdate": "2005-07-09T00:00:00Z",
+      "feidenavnPrefix": "ele0102",
+      "mail": "ele0102@skole.telemarkfylke.no",
+      "basisgruppe": "MRD:2TMA"
     },
-    "recipient": {
-      "fullName": "Brage Henriksen Dahl",
-      "streetAddress": "Portveien 2",
-      "zipCode": "0468",
-      "zipPlace": "Oslo"
+    "teacher": {
+      "upn": "larer.laresen@telemarkfylke.no",
+      "feidenavn": "larer.laresen@telemarkfylke.no",
+      "ansattnummer": "12345678",
+      "name": "Lærer Læresen",
+      "firstName": "Lærer",
+      "lastName": "Læresen",
+      "mail": "larer.laresen@telemarkfylke.no"
     },
     "content": {
       "utplassering": {
-        "_id": "5d7f29d059e31d0007cc9ff5",
-        "type": "utplassering",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [
-          {
-            "timeStamp": 1568615152589,
-            "modifiedBy": "arv1204"
-          }
-        ],
-        "student": "fer0804",
-        "bedriftsNavn": "NOTODDEN KOMMUNE",
-        "bedriftsData": {
-          "organisasjonsNummer": "976825063",
-          "navn": "NOTODDEN KOMMUNE",
-          "adresse": "Sauheradvegen 5",
-          "postnummer": "3683",
-          "poststed": "NOTODDEN",
-          "avdeling": "HEDDAL HJEMMETJENESTE"
-        },
+        "_id": "66ed4c7d0cb981fd72e26a8e",
+        "oppmotested": "I butikken",
+        "kopiPrEpost": [],
+        "fraDato": "03.09.2024",
+        "tilDato": "11.09.2024",
+        "daysPerWeek": "5",
+        "startTid": "08:00",
+        "sluttTid": "16:00",
         "kontaktpersonData": [
           {
-            "navn": "Fornavn Etternavn",
-            "telefon": "98765432",
-            "epost": "fornavn.etternavn@notodden.kommune.no",
+            "navn": "Whatever",
+            "telefon": "12345678",
+            "epost": "nei@nei.no",
+            "avdeling": "Whatever"
+          },
+          {
+            "navn": "Halla Ball",
+            "telefon": "12345678",
+            "epost": "",
             "avdeling": ""
           }
         ],
         "parorendeData": [
           {
-            "navn": "Fornavn Etternavn",
-            "telefon": "98765432"
+            "navn": "Jaman",
+            "telefon": "46828258"
           }
         ],
-        "fraDato": "19.07.2019",
-        "tilDato": "20.09.2019",
-        "daysPerWeek": "3",
-        "startTid": "07:30",
-        "sluttTid": "15:00",
-        "oppmotested": "Sauheradvegen",
-        "tilbakemelding": false
+        "bedriftsData": {
+          "organisasjonsNummer": "979373597",
+          "navn": "NØTTERØ BAKERI & KONDITORI ENGROS AS",
+          "adresse": "Løkkeåsveien 16",
+          "postnummer": "3138",
+          "poststed": "SKALLESTAD",
+          "type": "enhet",
+          "avdeling": "Frukt og grønt"
+        },
+        "bedriftsNavn": "NØTTERØ BAKERI & KONDITORI ENGROS AS",
+        "level": "VG2"
       },
       "evalueringsdata": {
         "hms": {
@@ -82,14 +95,14 @@
             "nb": "Eleven følger retningslinjer og HMS innenfor fagområdet",
             "nn": "Eleven følgjer retningslinjer og HMS innanfor fagområdet"
           },
-          "score": "Som forventet"
+          "score": "Over forventet"
         },
         "respekt-retningslinjer": {
           "title": {
             "nb": "Eleven viser gode holdninger og respekt for opplæringsstedets regler og retningslinjer",
             "nn": "Eleven viser gode haldningar og respekt for opplæringsstaden sine reglar og retningslinjer"
           },
-          "score": "Under forventet"
+          "score": "0"
         },
         "respekt-mennesker": {
           "title": {
@@ -109,7 +122,8 @@
           "title": {
             "nb": "Eleven har kommunikasjonsevner i møte med kollegaer, kunder og brukere",
             "nn": "Eleven viser kommunikasjonsevner i møte med kollegaer, kundar og brukarar"
-          }
+          },
+          "score": "Som forventet"
         },
         "veiledning": {
           "title": {
@@ -123,18 +137,20 @@
             "nb": "Eleven utfører tildelte arbeidsoppgaver",
             "nn": "Eleven utfører tildelte arbeidsoppgåver"
           },
-          "score": 0
+          "score": "0"
         },
         "initiativ": {
           "title": {
             "nb": "Eleven viser initiativ og interesse for arbeidet",
             "nn": "Eleven viser initiativ og interesse for arbeidet"
           },
-          "score": "Over forventet"
-        },
+          "score": "Som forventet"
+        }
+      },
+      "ordenatferd": {
         "orden": {
           "title": "Orden (punktlighet)",
-          "score": "Over forventet"
+          "score": "Som forventet"
         },
         "atferd": {
           "title": "Atferd (holdninger, respekt)",
@@ -142,207 +158,145 @@
         }
       },
       "fravar": {
-        "dager": "2",
-        "timer": "5",
+        "dager": "123",
+        "timer": "3",
         "varslet": "av og til"
       },
       "kompetansemal": [
         {
-        "_id": "5d7f2af09f7cda0008d292d4",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
+          "grep": {
+            "kode": "KM3312",
+            "uri": "http://psi.udir.no/kl06/KM3312",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3312",
+            "tittel": {
+              "default": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+              "nb": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+              "nn": "byggje og montere berande veggkonstruksjonar og gjere greie for korleis fukt og temperaturendringar påverkar konstruksjonen",
+              "en": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+              "sm": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen"
+            }
+          },
+          "programomraade": {
+            "kode": "BATMF2----",
+            "uri": "http://psi.udir.no/kl06/BATMF2----",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+            "tittel": {
+              "default": "Tømrer",
+              "nb": "Tømrer",
+              "nn": "Tømrar",
+              "en": "Carpentry",
+              "sm": "Ceahkkun"
+            },
+            "trinn": "vg2",
+            "opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+          },
+          "arbeidsoppgaver": "",
+          "tilbakemelding": "Middels måloppnåelse"
         },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-            "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-            "en": "mestre tre ulike typer masseflyttingsmaskiner"
-          }
+        {
+          "grep": {
+            "kode": "KM3318",
+            "uri": "http://psi.udir.no/kl06/KM3318",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3318",
+            "tittel": {
+              "default": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+              "nb": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+              "nn": "utarbeide målsette skisser for konstruksjonar og bygningar og overføre mål frå teikning til konstruksjon",
+              "en": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+              "sm": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon"
+            }
+          },
+          "programomraade": {
+            "kode": "BATMF2----",
+            "uri": "http://psi.udir.no/kl06/BATMF2----",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+            "tittel": {
+              "default": "Tømrer",
+              "nb": "Tømrer",
+              "nn": "Tømrar",
+              "en": "Carpentry",
+              "sm": "Ceahkkun"
+            },
+            "trinn": "vg2",
+            "opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+          },
+          "arbeidsoppgaver": "HEi hei dette er en oppgave",
+          "tilbakemelding": "Middels måloppnåelse"
         },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Lav måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d4",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
+        {
+          "grep": {
+            "kode": "KM3308",
+            "uri": "http://psi.udir.no/kl06/KM3308",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3308",
+            "tittel": {
+              "default": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+              "nb": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+              "nn": "leggje tregolv og golv av samansette materiale og gjere greie for fuktinnhaldet og lydgjennomgangen i materiala",
+              "en": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+              "sm": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang"
+            }
+          },
+          "programomraade": {
+            "kode": "BATMF2----",
+            "uri": "http://psi.udir.no/kl06/BATMF2----",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+            "tittel": {
+              "default": "Tømrer",
+              "nb": "Tømrer",
+              "nn": "Tømrar",
+              "en": "Carpentry",
+              "sm": "Ceahkkun"
+            },
+            "trinn": "vg2",
+            "opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+          },
+          "arbeidsoppgaver": "",
+          "tilbakemelding": "Høy måloppnåelse"
         },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-            "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-            "en": "mestre tre ulike typer masseflyttingsmaskiner"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Høy måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d4",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-            "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-            "en": "mestre tre ulike typer masseflyttingsmaskiner"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Lav måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d5",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "bruke relevant måleutstyr",
-            "nn": "bruke relevant måleutstyr",
-            "en": "bruke relevant måleutstyr"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Middels måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d6",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
-            "nn": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
-            "en": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Lav måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d7",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
-            "nn": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
-            "en": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Lav måloppnåelse"
-      }, {
-        "_id": "5d7f2af09f7cda0008d292d8",
-        "type": "maal",
-        "created": {
-          "timeStamp": 1568615152589,
-          "createdBy": "arv1204"
-        },
-        "modified": [{
-          "timeStamp": 1568615152589,
-          "modifiedBy": "arv1204"
-        }],
-        "studentUserName": "fer0804",
-        "referanseID": "5d7f29d059e31d0007cc9ff5",
-        "referanseTittel": "Norges røde kors",
-        "grep": {
-          "kode": "K3703",
-          "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-          "tittel": {
-            "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-            "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-            "en": "mestre tre ulike typer masseflyttingsmaskiner"
-          }
-        },
-        "arbeidsoppgaver": "lede morgentrimmen",
-        "tilbakemelding": "Middels måloppnåelse"
-      }],
-      "year": "2020/2021"
-    },
-    "teacher": {
-      "username": "per2412",
-      "name": "Per Test",
-      "firstName": "Per",
-      "lastName": "Test",
-      "mobile": "45352515",
-      "mail": "per.test@vtfk.no"
+        {
+          "grep": {
+            "kode": "KM3302",
+            "uri": "http://psi.udir.no/kl06/KM3302",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3302",
+            "tittel": {
+              "default": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+              "nb": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+              "nn": "gjere greie for og utforske varmetransporten i materiale og konstruksjonar",
+              "en": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+              "sm": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner"
+            }
+          },
+          "programomraade": {
+            "kode": "BATMF2----",
+            "uri": "http://psi.udir.no/kl06/BATMF2----",
+            "url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+            "tittel": {
+              "default": "Tømrer",
+              "nb": "Tømrer",
+              "nn": "Tømrar",
+              "en": "Carpentry",
+              "sm": "Ceahkkun"
+            },
+            "trinn": "vg2",
+            "opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+          },
+          "arbeidsoppgaver": "",
+          "tilbakemelding": "Lav måloppnåelse"
+        }
+      ],
+      "year": "2024/2025"
     },
     "school": {
-      "id": "TESVS",
-      "name": "Testen videregående skole",
-      "shortName": "Testen vgs"
+      "name": "Mordor videregående skole",
+      "id": "12345",
+      "shortname": "OF-MRD",
+      "shortshortName": "MRD"
     },
     "isEncrypted": false,
     "status": [
       {
         "status": "queued",
-        "timestamp": 1610975973808
+        "timestamp": 1726831320011
       }
     ],
     "isQueued": true
