@@ -1,0 +1,49 @@
+{
+	"system": "smart",
+	"template": "motereferatV2",
+	"language": "nb",
+	"type": "2",
+	"version": "B",
+	"data": {
+		"meetingDate": "2024-04-26",
+		"sector": "Hengsrud vinkjeller",
+		"meetingCaseNumber": "123/1234",
+		"paragraph": "Offl. § 14",
+		"meetingTitle": "Et utrolig viktig møte!",
+		"meetingItems": [
+			{
+				"title": "Første saken",
+				"descriptionText": "En beskrivelse av den første saken",
+				"itemStatus": "Avsluttet",
+				"itemType": "Beslutning",
+				"decisionText": "Dette blir bra det!",
+				"itemResponsibleName": "Gunnar Gråstein",
+				"attachments": [
+					{
+						"fileName": "vedlegg1.pdf"
+					}
+				]
+			},
+			{
+				"title": "Andre saken",
+				"descriptionText": "En beskrivelse av den andre saken",
+				"itemStatus": "Avsluttet",
+				"itemType": "Diskusjon",
+				"decisionText": "Dette blir bra det!",
+				"itemResponsibleName": "Gunnar Gråstein",
+				"attachments": [
+					{
+						"fileName": "vedlegg1.pdf"
+					}
+				]
+			},
+			{
+				"title": "Tredje saken",
+				"itemStatus": "Avsluttet",
+				"itemType": "Diskusjon",
+				"decisionText": "Dette blir bra det!",
+				"itemResponsibleName": ""
+			}
+		]
+	}
+}
