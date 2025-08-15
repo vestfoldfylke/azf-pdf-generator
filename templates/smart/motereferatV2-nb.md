@@ -6,7 +6,6 @@ info:
   sector: {{ sector }}
   our-date: {{ isoDate meetingDate }}
   our-caseworker: {{ meetingResponsible }}
-  our-reference: {{ meetingCaseNumber }}
   paragraph: {{ paragraph }}
 ---
 
@@ -35,6 +34,7 @@ Ingen beskrivelse
 
 {{#if attachments}}
 **Vedlegg**<br>
+*Merk at vedlegg kan være dokumenter under arbeid*
 {{#each attachments}}
 - {{ fileName }}
 {{/each}}
