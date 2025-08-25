@@ -1,14 +1,21 @@
 /*
   Import dependencies
 */
-const PDFGenerator = require('@vtfk/pdf-generator')
-const { decodeBase64 } = require('@vtfk/utilities')
+const PDFGenerator = require('../lib/pdf-generate-v2/pdfgenerator.js')
 const getDocumentDefinition = require('../lib/document-definitions/index')
 const { logConfig, logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
 const Sjablong = require('@vtfk/sjablong')
 const merge = require('lodash.merge')
-const fs = require('fs')
+
+const decodeBase64 = (encodedString) => {
+  // Input validation
+  if (!encodedString) throw new Error('No input string provided');
+  // Create buffer from base64
+  const buff = Buffer.from(encodedString, 'base64');
+  // Output as utf-8
+  return buff.toString('utf8');
+}
 
 /*
   Function
@@ -21,50 +28,9 @@ module.exports = async function (context, req) {
     // Input validation
     if (!req || !req.body) throw new HTTPError(400, 'Request is empty')
     // Determine what template text to use
-    let template
+    if (!req.body.template) throw new HTTPError(400, 'You have to provide template to generate PDF', 'No template is provided')
     // If a template has been received in the request, decode it
-    if (req.body.template) {
-      template = decodeBase64(req.body.template)
-    } else if (req.body.templateId) {
-      // Validate that other required fields are present
-      if (!req.body.system) throw new HTTPError(400, 'When providing a templateid, system must also be provided')
-
-      // Define some candidates of templates to look for
-      const defaultLanguage = 'nb'
-      const templateId = req.body.templateId
-      const system = req.body.system
-      const language = req.body.language || 'nb'
-
-      const candidates = []
-      if (system) {
-        if (language && language !== defaultLanguage) candidates.push(`templates/${system}/${templateId}-${language}.md`)
-        candidates.push(`templates/${system}/${templateId}-${defaultLanguage}.md`)
-      }
-      if (language && language !== defaultLanguage) candidates.push(`templates/${templateId}-${language}.md`)
-      candidates.push(`templates/${templateId}-${defaultLanguage}.md`)
-      candidates.push(`templates/${templateId}.md`)
-
-      // Search for the template in the candidates
-      candidates.forEach((candidate) => {
-        // If template has been found, just return
-        if (template) { return }
-        // Search for templates
-        if (fs.existsSync(candidate)) {
-          try {
-            const tmp = fs.readFileSync(candidate, 'utf-8')
-            if (tmp) template = tmp
-          } catch {
-            throw new HTTPError(500, `The content template ${candidate} was found, but we were unable to read it`)
-          }
-        }
-      })
-
-      // If no templates was found, throw an error
-      if (!template) throw new HTTPError(404, 'Could not find the requested local template')
-    } else {
-      // No template was received through the request
-      throw new HTTPError(400, 'You have to provide templateid or template to generate PDF', 'No template is provided')
-    }
+    const template = decodeBase64(req.body.template)
 
     // CombinedMetadata - this will be a combination of req.body.data, schemaDefaults and markdownContent.metadata
     let combinedMetadata = {}
@@ -113,15 +79,14 @@ module.exports = async function (context, req) {
     /*
       Respond
     */
-    context.res = {
-      // status: 200, /* Defaults to 200 */
+    return {
       body: {
         data: combinedMetadata,
         base64: pdfBase64
       }
     }
   } catch (error) {
-    if (error instanceof HTTPError) context.res = error.toJSON()
-    else context.res = new HTTPError(500, error.message || 'An unknown error occured', error).toJSON()
+    if (error instanceof HTTPError) return error.toJSON()
+    return new HTTPError(500, error.message || 'An unknown error occured', error).toJSON()
   }
 }

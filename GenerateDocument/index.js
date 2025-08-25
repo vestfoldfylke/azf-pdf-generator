@@ -1,5 +1,5 @@
 const { logConfig, logger } = require('@vtfk/logger')
-const pdfmake = require('@alheimsins/pdf-make')
+const { superPdfMake } = require('../lib/pdfmake/index.js')
 const prettyBytes = require('pretty-bytes')
 const HTTPError = require('../lib/http-error')
 const validateSchema = require('../lib/validate-schema')
@@ -17,7 +17,7 @@ module.exports = async function (context, req) {
     const template = await getTemplate(payload)
     const document = generateDocument({ template, data })
     const options = getPdfmakeOptions(payload)
-    const documentBuffer = await pdfmake(document, options)
+    const documentBuffer = await superPdfMake(document, options)
 
     logger('info', ['returning document', 'size', prettyBytes(Buffer.byteLength(documentBuffer))])
     return getResponseObject({ ...payload, data, base64: documentBuffer.toString('base64') })

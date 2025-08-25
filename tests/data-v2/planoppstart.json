@@ -1,0 +1,38 @@
+{
+  "body": {
+    "_id": {
+      "$oid": "66fe58b07c31975f391234"
+    },
+    "name": "Varsel om høy musikk",
+    "description": "Varsel om høy musikk i henhold til PBL § 12-8",
+    "version": 1,
+    "enabled": true,
+    "documentDefinitionId": "brevmal",
+    "template": "IyBWYXJzZWwgb20gcGxhbm9wcHN0YXJ0CgpJIGhlbmhvbGQgdGlsIHBsYW4tIG9nIGJ5Z25pbmdzbG92ZW4gwqcxMi04IHZhcnNsZXMgZGV0IG9wcHN0YXJ0IGF2IGFyYmVpZCBtZWQgZGV0YWxqcmVndWxlcmluZ3NwbGFuIGZvcjoKCkZ5bGtlc3ZlaTogW1tsYWJlbD0iRnYgbnVtbWVyIjp0eXBlPSJzdHJpbmciOnBhdGg9ImZ2IG51bW1lciI6ZGVzY3JpcHRpb249IkZ2IG51bW1lciwgc2tyaXYgYmFyZSB0YWxsZXQiOnJlcXVpcmVkPSJ0cnVlIl1dCgpQcm9zamVrdDogW1tsYWJlbD0iUHJvc2pla3RuYXZuIjp0eXBlPSJzdHJpbmciOnBhdGg9InByb3NqZWt0bmF2biI6ZGVzY3JpcHRpb249IlByb3NqZWt0bmF2biI6cmVxdWlyZWQ9InRydWUiXV0KClBsYW4tSUQ6IFtbbGFiZWw9IlBsYW4tSUQiOnR5cGU9InN0cmluZyI6cGF0aD0icGxhbi1pZCI6ZGVzY3JpcHRpb249IlBsYW4tSUQiOnJlcXVpcmVkPSJ0cnVlIl1dCgpTZSBiZXNrcml2ZWxzZSBhdiBoZW5zaWt0IG1lZCB0aWx0YWtldCBpIGVnZXQgdmVkbGVnZwoKClNlIHZlZGxhZ3Qga2FydCBzb20gdmlzZXIgdmFyc2xpbmdzZ3JlbnNlLiBFbmRlbGlnIHBsYW5hdmdyZW5zbmluZyBrYW4gYXZ2aWtlIG5vZSBmcmEgZGV0dGUuCgpJIGZvcmJpbmRlbHNlIG1lZCBrdmFsaXRldHNzaWtyaW5nIGF2IGVpZW5kb21zZ3JlbnNlciB2aWwgZGV0IGJsaSBzZW5kdCB1dCBlZ25lIHZhcnNsZXIgdGlsIGdydW5uZWllcmUgZsO4ciBkZXQgZXZlbnR1ZWx0IGJsaXIgYXZob2xkIG9wcG3DpWxpbmdzZm9ycmV0bmluZ2VyLgoKIyMgRnJpc3QgZm9yIGlubnNwaWxsClN5bnNwdW5rdGVyIGVsbGVyIG1lcmtuYWRlciB0aWwgcGxhbmFyYmVpZGV0IHNlbmRlcyBza3JpZnRsaWcgaW5uZW4gKipbW2xhYmVsPSJGcmlzdCBmb3IgaW5uc3BpbGwiOnR5cGU9InN0cmluZyI6cGF0aD0iZnJpc3QgZm9yIGlubnNwaWxsIjpkZXNjcmlwdGlvbj0iRGF0byBmcmlzdCBmb3IgaW5uc3BpbGwgKE1NLkRELllZWVkpIjpyZXF1aXJlZD0idHJ1ZSJdXSoqIHRpbDoKCltbbGFiZWw9IktvbW11bmVuYXZuIjp0eXBlPSJzdHJpbmciOnBhdGg9ImtvbW11bmVuYXZuIjpkZXNjcmlwdGlvbj0iU2tyaXYgaGVsZSBuYXZuZXQgbWVkIGtvbW11bmUgYmFrIjpyZXF1aXJlZD0idHJ1ZSJdXSwgW1tsYWJlbD0iUG9zdGFkcmVzc2UiOnR5cGU9InN0cmluZyI6cGF0aD0icG9zdGFkcmVzc2Uga29tbXVuZSI6ZGVzY3JpcHRpb249IlBvc3RhZHJlc3NlIC9wb3N0Ym9rcyI6cmVxdWlyZWQ9InRydWUiXV0gLCBbW2xhYmVsPSJQb3N0bnVtbWVyIG9nIHBvc3RzdGVkIjp0eXBlPSJzdHJpbmciOnBhdGg9InBvc3RudW1tZXIgb2cgcG9zdHN0ZWQiOmRlc2NyaXB0aW9uPSJQb3N0bnVtbWVyIG9nIHBvc3RzdGVkIjpyZXF1aXJlZD0idHJ1ZSJdXQoKCiBlbGxlciBww6UgZS1wb3N0OiA8W1tsYWJlbD0iZS1wb3N0Ijp0eXBlPSJzdHJpbmciOnBhdGg9ImUtcG9zdCI6ZGVzY3JpcHRpb249ImUtcG9zdCB0aWwgcG9zdG1vdHRhayBmb3IgZ2plbGRlbmRlIGtvbW11bmUiOnJlcXVpcmVkPSJ0cnVlIl1dPgoKCiMjIyMgQW50YWxsIHZlZGxlZ2c6IFtbbGFiZWw9IkFudGFsbCB2ZWRsZWdnIjp0eXBlPSJzdHJpbmciOnBhdGg9ImFudGFsbCB2ZWRsZWdnIjpkZXNjcmlwdGlvbj0iQW50YWxsIHZlZGxlZ2ciOnJlcXVpcmVkPSJ0cnVlIl1d",
+    "language": "nb",
+    "createdTimestamp": {
+      "$date": "2024-09-26T21:52:48.757Z"
+    },
+    "createdBy": "Tone Døv",
+    "createdById": "b2604750-36cc-484a-987d-712344",
+    "createdByDepartment": "Seksjon for musikk",
+    "modifiedTimestamp": {
+      "$date": "2024-09-26T21:52:48.757Z"
+    },
+    "modifiedBy": "Tone Døv",
+    "modifiedById": "b2604750-36cc-484a-987d-712344",
+    "modifiedByDepartment": "Seksjon for musikk",
+    "__v": 0,
+    "data": {
+      "fv nummer": "123",
+      "prosjektnavn": "Utvidelse av Fv123",
+      "plan-id": "2024-001",
+      "frist for innspill": "06.30.2024",
+      "kommunenavn": "Eksempel kommune",
+      "postadresse kommune": "Postboks 100",
+      "postnummer og poststed": "1234 Eksempeltettsted",
+      "e-post": "postmottak@eksempelkommune.no",
+      "antall vedlegg": "2"
+    }
+  }
+}
