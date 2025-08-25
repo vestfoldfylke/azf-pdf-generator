@@ -10,11 +10,11 @@ const merge = require('lodash.merge')
 
 const decodeBase64 = (encodedString) => {
   // Input validation
-  if (!encodedString) throw new Error('No input string provided');
+  if (!encodedString) throw new Error('No input string provided')
   // Create buffer from base64
-  const buff = Buffer.from(encodedString, 'base64');
+  const buff = Buffer.from(encodedString, 'base64')
   // Output as utf-8
-  return buff.toString('utf8');
+  return buff.toString('utf8')
 }
 
 /*
