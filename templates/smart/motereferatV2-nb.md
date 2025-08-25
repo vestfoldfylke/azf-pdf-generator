@@ -19,22 +19,24 @@ Saksansvarlig: {{itemResponsibleName}}<br>
 {{#if itemStatus}}
 Status: {{itemStatus}}<br>
 {{/if}}
+{{#if itemType}}
+Sakstype: {{itemType}}<br>
+{{/if}}
 
-**Beskrivelse**<br>
-{{#if descriptionText}}
-{{ descriptionText }}
+### Beskrivelse
+{{#if descriptionMd}}
+{{ descriptionMd }}
 {{else}}
 Ingen beskrivelse
 {{/if}}
 
-{{#if decisionText}}
-**{{itemType}}**<br>
-{{ decisionText }}
+{{#if decisionMd}}
+### Beslutning
+{{ decisionMd }}
 {{/if}}
 
 {{#if attachments}}
-**Vedlegg**<br>
-*Merk at vedlegg kan være dokumenter under arbeid*
+### Vedlegg<br>
 {{#each attachments}}
 - {{ fileName }}
 {{/each}}

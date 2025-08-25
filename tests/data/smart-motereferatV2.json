@@ -14,9 +14,11 @@
 			{
 				"title": "Første saken",
 				"descriptionText": "En beskrivelse av den første saken",
+				"descriptionMd": "[nrk.no/](https://nrk.no/)\n\nDet kommer stort sett nyheter hver dag. **Nyheter** er viktig for å holde seg oppdatert.\n\n- Dette er en punktliste\n- med flere punkter\n- som alle er viktige",
 				"itemStatus": "Avsluttet",
 				"itemType": "Beslutning",
 				"decisionText": "Dette blir bra det!",
+				"decisionMd": "en *BESLUTNING*",
 				"itemResponsibleName": "Gunnar Gråstein",
 				"attachments": [
 					{
@@ -27,9 +29,11 @@
 			{
 				"title": "Andre saken",
 				"descriptionText": "En beskrivelse av den andre saken",
+				"descriptionMd": "En beskrivelse av den andre saken",
 				"itemStatus": "Avsluttet",
 				"itemType": "Diskusjon",
 				"decisionText": "Dette blir bra det!",
+				"decisionMd": "Saken ble tatt til\n\n**orienteringsløp**",
 				"itemResponsibleName": "Gunnar Gråstein",
 				"attachments": [
 					{
