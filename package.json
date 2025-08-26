@@ -23,7 +23,7 @@
     "ajv": "^8.17.1",
     "handlebars": "^4.7.8",
     "html-to-pdfmake": "^2.5.31",
-    "jsdom": "19.0.0",
+    "jsdom": "^26.1.0",
     "lodash.merge": "4.6.2",
     "markdown-it": "^14.1.0",
     "markdown-it-front-matter": "^0.2.4",
