@@ -4,11 +4,11 @@ const { join } = require('path')
 
 const testDocumentsTypes = ['planoppstart']
 const context = { log: console.log, invocationId: 'testing' }
+const req = { url: 'http://localhost/api/GenerateV2' }
 
 describe('GenerateV2 function test', () => {
   it('returns 400 when no body was provided', async () => {
-    const result = await generateV2Func(context, {})
-    console.log(result)
+    const result = await generateV2Func(context, req)
     expect(result).toMatchObject({
       status: 400,
       body: { error: { message: 'Request is empty' } }
@@ -16,7 +16,7 @@ describe('GenerateV2 function test', () => {
   })
 
   it('returns 400 if schema validation fails', async () => {
-    const result = await generateV2Func(context, { body: {} })
+    const result = await generateV2Func(context, { ...req, body: {} })
     expect(result).toMatchObject({
       status: 400,
       body: { error: { message: 'You have to provide template to generate PDF' } }
@@ -26,7 +26,7 @@ describe('GenerateV2 function test', () => {
   testDocumentsTypes.forEach(type => {
     const testDocument = require(`./data-v2/${type}.json`)
     it(`${type} :: can parse and write returned base64 to .pdf file correctly`, async () => {
-      const document = await generateV2Func(context, { body: testDocument.body })
+      const document = await generateV2Func(context, { ...req, body: testDocument.body })
       const { base64 } = document.body
       expect(typeof base64).toBe('string')
 

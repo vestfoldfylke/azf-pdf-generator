@@ -3,8 +3,7 @@ const validateSchema = require('../../lib/validate-schema')
 
 const getValidationInnerError = (data, schema) => {
   try {
-    const validation = validateSchema(data, schema)
-    return validation
+    return validateSchema(data, schema)
   } catch (error) {
     return error.innerError
   }
@@ -46,10 +45,14 @@ describe('Validate document schema', () => {
   })
 
   it('returns language \'nb\', empty data object, type \'\' and version \'\' when it isn\'t passed', () => {
-    expect(validateSchema(validSchema)).toEqual({ ...validSchema, language: 'nb', data: {} })
+    const schema = { ...validSchema }
+    validateSchema(schema)
+    expect(schema).toEqual({ ...schema, data: {}, language: 'nb' })
   })
 
   it('returns language \'nb\', empty data object, type \'2\' and version \'B\' when it is passed', () => {
-    expect(validateSchema({ ...validSchema, type: '2', version: 'B' })).toEqual({ ...validSchema, language: 'nb', data: {}, type: '2', version: 'B' })
+    const schema = { ...validSchema, type: '2', version: 'B' }
+    validateSchema(schema)
+    expect(schema).toEqual({ ...schema, data: {}, language: 'nb' })
   })
 })

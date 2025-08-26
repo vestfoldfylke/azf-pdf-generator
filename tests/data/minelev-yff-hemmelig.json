@@ -1,0 +1,308 @@
+{
+	"system": "minelev",
+	"template": "yff/hemmelig",
+	"language": "nb",
+	"data": {
+		"preview": true,
+		"created": {
+			"date": "2024-09-20T11:22:00.011Z",
+			"timestamp": 1726831320011,
+			"createdBy": {
+				"principalName": "demo.spokelse@telemarkfylke.no",
+				"principalId": "12345-4378493-fjdiofjd",
+				"name": "Demo Spøkelse"
+			}
+		},
+		"modified": {
+			"date": "2024-09-20T11:22:00.011Z",
+			"timestamp": "2024-09-20T11:22:00.011Z",
+			"modifiedBy": {
+				"principalName": "demo.spokelse@telemarkfylke.no",
+				"principalId": "12345-4378493-fjdiofjd",
+				"name": "Demo Spøkelse"
+			}
+		},
+		"variant": "tilbakemelding",
+		"student": {
+			"upn": "ele0102@skole.telemarkfylke.no",
+			"feidenavn": "ele0102@telemarkfylke.no",
+			"elevnummer": "12345678",
+			"name": "Elev Elevesen",
+			"firstName": "Elev",
+			"lastName": "Elevesen",
+			"birthdate": "2005-07-09T00:00:00Z",
+			"feidenavnPrefix": "ele0102",
+			"mail": "ele0102@skole.telemarkfylke.no",
+			"basisgruppe": "MRD:2TMA",
+			"classId": "OF-MRD/2TMA"
+		},
+		"teacher": {
+			"upn": "larer.laresen@telemarkfylke.no",
+			"feidenavn": "larer.laresen@telemarkfylke.no",
+			"ansattnummer": "12345678",
+			"name": "Lærer Læresen",
+			"firstName": "Lærer",
+			"lastName": "Læresen",
+			"mail": "larer.laresen@telemarkfylke.no"
+		},
+		"content": {
+			"utplassering": {
+				"_id": "66ed4c7d0cb981fd72e26a8e",
+				"oppmotested": "I butikken",
+				"kopiPrEpost": [],
+				"fraDato": "03.09.2024",
+				"tilDato": "11.09.2024",
+				"daysPerWeek": "5",
+				"startTid": "08:00",
+				"sluttTid": "16:00",
+				"kontaktpersonData": [
+					{
+						"navn": "Whatever",
+						"telefon": "12345678",
+						"epost": "nei@nei.no",
+						"avdeling": "Whatever"
+					},
+					{
+						"navn": "Halla Ball",
+						"telefon": "12345678",
+						"epost": "",
+						"avdeling": ""
+					}
+				],
+				"parorendeData": [
+					{
+						"navn": "Jaman",
+						"telefon": "46828258"
+					}
+				],
+				"bedriftsData": {
+					"organisasjonsNummer": "979373597",
+					"navn": "NØTTERØ BAKERI & KONDITORI ENGROS AS",
+					"adresse": "Løkkeåsveien 16",
+					"postnummer": "3138",
+					"poststed": "SKALLESTAD",
+					"type": "enhet",
+					"avdeling": "Frukt og grønt"
+				},
+				"bedriftsNavn": "NØTTERØ BAKERI & KONDITORI ENGROS AS",
+				"level": "VG2"
+			},
+			"evalueringsdata": {
+				"hms": {
+					"title": {
+						"nb": "Eleven følger retningslinjer og HMS innenfor fagområdet",
+						"nn": "Eleven følgjer retningslinjer og HMS innanfor fagområdet"
+					},
+					"score": "Over forventet"
+				},
+				"respekt-retningslinjer": {
+					"title": {
+						"nb": "Eleven viser gode holdninger og respekt for opplæringsstedets regler og retningslinjer",
+						"nn": "Eleven viser gode haldningar og respekt for opplæringsstaden sine reglar og retningslinjer"
+					},
+					"score": "0"
+				},
+				"respekt-mennesker": {
+					"title": {
+						"nb": "Eleven viser gode holdninger og respekt for mennesker de møter under utplasseringen",
+						"nn": "Eleven viser gode haldningar og respekt for menneske dei møter under utplasseringa"
+					},
+					"score": "Som forventet"
+				},
+				"tilpasningsdyktig": {
+					"title": {
+						"nb": "Eleven er tilpasningsdyktig og kan samarbeide",
+						"nn": "Eleven er tilpassingsdyktig og kan samarbeide"
+					},
+					"score": "Som forventet"
+				},
+				"kommunikasjon": {
+					"title": {
+						"nb": "Eleven har kommunikasjonsevner i møte med kollegaer, kunder og brukere",
+						"nn": "Eleven viser kommunikasjonsevner i møte med kollegaer, kundar og brukarar"
+					},
+					"score": "Som forventet"
+				},
+				"veiledning": {
+					"title": {
+						"nb": "Eleven tar imot veiledning",
+						"nn": "Eleven tek imot rettleiing"
+					},
+					"score": "Under forventet"
+				},
+				"oppfylle": {
+					"title": {
+						"nb": "Eleven utfører tildelte arbeidsoppgaver",
+						"nn": "Eleven utfører tildelte arbeidsoppgåver"
+					},
+					"score": "0"
+				},
+				"initiativ": {
+					"title": {
+						"nb": "Eleven viser initiativ og interesse for arbeidet",
+						"nn": "Eleven viser initiativ og interesse for arbeidet"
+					},
+					"score": "Som forventet"
+				}
+			},
+			"ordenatferd": {
+				"orden": {
+					"title": "Orden (punktlighet)",
+					"score": "Som forventet"
+				},
+				"atferd": {
+					"title": "Atferd (holdninger, respekt)",
+					"score": "Som forventet"
+				}
+			},
+			"fravar": {
+				"dager": "123",
+				"timer": "3",
+				"varslet": "av og til"
+			},
+			"kompetansemal": [
+				{
+					"grep": {
+						"kode": "KM3312",
+						"uri": "http://psi.udir.no/kl06/KM3312",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3312",
+						"tittel": {
+							"default": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+							"nb": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+							"nn": "byggje og montere berande veggkonstruksjonar og gjere greie for korleis fukt og temperaturendringar påverkar konstruksjonen",
+							"en": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen",
+							"sm": "bygge og montere bærende veggkonstruksjoner og gjøre rede for hvordan fukt og temperaturendringer påvirker konstruksjonen"
+						}
+					},
+					"programomraade": {
+						"kode": "BATMF2----",
+						"uri": "http://psi.udir.no/kl06/BATMF2----",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+						"tittel": {
+							"default": "Tømrer",
+							"nb": "Tømrer",
+							"nn": "Tømrar",
+							"en": "Carpentry",
+							"sm": "Ceahkkun"
+						},
+						"trinn": "vg2",
+						"opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+					},
+					"arbeidsoppgaver": "",
+					"tilbakemelding": "Middels måloppnåelse"
+				},
+				{
+					"grep": {
+						"kode": "KM3318",
+						"uri": "http://psi.udir.no/kl06/KM3318",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3318",
+						"tittel": {
+							"default": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+							"nb": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+							"nn": "utarbeide målsette skisser for konstruksjonar og bygningar og overføre mål frå teikning til konstruksjon",
+							"en": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon",
+							"sm": "utarbeide målsatte skisser for konstruksjoner og bygninger og overføre mål fra tegning til konstruksjon"
+						}
+					},
+					"programomraade": {
+						"kode": "BATMF2----",
+						"uri": "http://psi.udir.no/kl06/BATMF2----",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+						"tittel": {
+							"default": "Tømrer",
+							"nb": "Tømrer",
+							"nn": "Tømrar",
+							"en": "Carpentry",
+							"sm": "Ceahkkun"
+						},
+						"trinn": "vg2",
+						"opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+					},
+					"arbeidsoppgaver": "HEi hei dette er en oppgave",
+					"tilbakemelding": "Middels måloppnåelse"
+				},
+				{
+					"grep": {
+						"kode": "KM3308",
+						"uri": "http://psi.udir.no/kl06/KM3308",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3308",
+						"tittel": {
+							"default": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+							"nb": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+							"nn": "leggje tregolv og golv av samansette materiale og gjere greie for fuktinnhaldet og lydgjennomgangen i materiala",
+							"en": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang",
+							"sm": "legge tregulv og gulv av sammensatte materialer og gjøre rede for materialenes fuktinnhold og lydgjennomgang"
+						}
+					},
+					"programomraade": {
+						"kode": "BATMF2----",
+						"uri": "http://psi.udir.no/kl06/BATMF2----",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+						"tittel": {
+							"default": "Tømrer",
+							"nb": "Tømrer",
+							"nn": "Tømrar",
+							"en": "Carpentry",
+							"sm": "Ceahkkun"
+						},
+						"trinn": "vg2",
+						"opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+					},
+					"arbeidsoppgaver": "",
+					"tilbakemelding": "Høy måloppnåelse"
+				},
+				{
+					"grep": {
+						"kode": "KM3302",
+						"uri": "http://psi.udir.no/kl06/KM3302",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/kompetansemaal-lk20/KM3302",
+						"tittel": {
+							"default": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+							"nb": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+							"nn": "gjere greie for og utforske varmetransporten i materiale og konstruksjonar",
+							"en": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner",
+							"sm": "gjøre rede for og utforske varmetransporten i materialer og konstruksjoner"
+						}
+					},
+					"programomraade": {
+						"kode": "BATMF2----",
+						"uri": "http://psi.udir.no/kl06/BATMF2----",
+						"url-data": "https://beta-data.udir.no/kl06/v201906/programomraader/BATMF2----",
+						"tittel": {
+							"default": "Tømrer",
+							"nb": "Tømrer",
+							"nn": "Tømrar",
+							"en": "Carpentry",
+							"sm": "Ceahkkun"
+						},
+						"trinn": "vg2",
+						"opplaeringssted": "http://psi.udir.no/kl06/opplaeringssted_skole"
+					},
+					"arbeidsoppgaver": "",
+					"tilbakemelding": "Lav måloppnåelse"
+				}
+			],
+			"year": "2024/2025"
+		},
+		"school": {
+			"name": "Mordor videregående skole",
+			"id": "12345",
+			"shortname": "OF-MRD",
+			"shortshortName": "MRD"
+		},
+		"schoolFooter": {
+			"address": "Skoleveien 1, 1234 Skoleby",
+			"phoneNumber": "12 34 56 78",
+			"mail": "foo@bar.biz",
+			"organizationNumber": "123 456 789"
+		},
+		"isEncrypted": false,
+		"status": [
+			{
+				"status": "queued",
+				"timestamp": 1726831320011
+			}
+		],
+		"isQueued": true
+	}
+}

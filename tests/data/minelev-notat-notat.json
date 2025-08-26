@@ -1,0 +1,56 @@
+{
+	"system": "minelev",
+	"template": "notat/notat",
+	"language": "nb",
+	"data": {
+		"preview": true,
+		"created": {
+			"timestamp": 1606252264318,
+			"createdBy": "tes0101"
+		},
+		"modified": [{
+			"timestamp": 1606252264318,
+			"modifiedBy": "tes0101"
+		}],
+		"content": {
+			"note": "Eleven hører på P1 på maks styrke i timen."
+		},
+		"student": {
+			"username": "bra2001",
+			"name": "Brage Dahl",
+			"firstName": "Brage",
+			"lastName": "Dahl",
+			"classId": "TEST/12STABEIS"
+		},
+		"teacher": {
+			"username": "tes0101",
+			"name": "Testine Testen",
+			"firstName": "Testine",
+			"lastName": "Testen"
+		},
+		"recipient": {
+			"streetAddress": "Testveien 1",
+			"zipCode": "1234",
+			"zipPlace": "Testby"
+		},
+		"school": {
+			"id": "TESVS",
+			"name": "Testen videregående skole",
+			"shortName": "Testen vgs"
+		},
+		"schoolFooter": {
+			"address": "Skoleveien 1, 1234 Skoleby",
+			"phoneNumber": "12 34 56 78",
+			"mail": "foo@bar.biz",
+			"organizationNumber": "123 456 789"
+		},
+		"isEncrypted": false,
+		"status": [
+			{
+				"status": "queued",
+				"timestamp": 1606252264318
+			}
+		],
+		"isQueued": true
+	}
+}

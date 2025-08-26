@@ -14,11 +14,11 @@ const frontmatterObject = {
   }
 }
 
-const markdown = '# Hi!\n\nWhats up?'
-const markdownHtml = '<h1>Hi!</h1>\n<p>Whats up?</p>'
+const markdown = "# Hi!\n\nWhat's up?"
+const markdownHtml = "<h1>Hi!</h1>\n<p>What's up?</p>"
 
 describe('Parse markdown', () => {
-  it('doesn\' throw when parsing valid markdown', () => {
+  it('doesn\'t throw when parsing valid markdown', () => {
     expect(() => parseMarkdown(markdown)).not.toThrow()
   })
 
@@ -27,7 +27,7 @@ describe('Parse markdown', () => {
     expect(html).toMatch(markdownHtml)
   })
 
-  it('parses frontmatter yaml to correct ocject', () => {
+  it('parses frontmatter yaml to correct object', () => {
     const { metadata } = parseMarkdown(frontmatter)
     expect(metadata).toEqual(frontmatterObject)
   })

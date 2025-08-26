@@ -1,28 +1,26 @@
-const { logConfig, logger } = require('@vtfk/logger')
-const { superPdfMake } = require('../lib/pdfmake/index.js')
+const { logger } = require('@vtfk/logger')
 const prettyBytes = require('pretty-bytes')
-const HTTPError = require('../lib/http-error')
+const errorHandling = require('../lib/error-handling')
+const { superPdfMake } = require('../lib/pdfmake/index.js')
 const validateSchema = require('../lib/validate-schema')
 const getResponseObject = require('../lib/get-response-object')
 const getTemplate = require('../lib/get-template')
 const generateDocument = require('../lib/generate-document')
 const getPdfmakeOptions = require('../lib/get-pdfmake-options')
 
-module.exports = async function (context, req) {
-  logConfig({ azure: { context }, prefix: 'generate-document' })
+const generate = async (context, req) => {
   logger('info', 'start')
 
-  try {
-    const { data, ...payload } = validateSchema(req.body) // Throws error if schema isn't valid, and returns payload if valid
-    const template = await getTemplate(payload)
-    const document = generateDocument({ template, data })
-    const options = getPdfmakeOptions(payload)
-    const documentBuffer = await superPdfMake(document, options)
+  validateSchema(req.body)
+  const { system, template, language, type, version, data } = req.body
 
-    logger('info', ['returning document', 'size', prettyBytes(Buffer.byteLength(documentBuffer))])
-    return getResponseObject({ ...payload, data, base64: documentBuffer.toString('base64') })
-  } catch (error) {
-    if (error instanceof HTTPError) return error.toJSON()
-    return new HTTPError(500, error.message || 'An unknown error occured', error).toJSON()
-  }
+  const templateString = await getTemplate(system, template, language)
+  const document = generateDocument(templateString, data)
+  const options = getPdfmakeOptions(type, version)
+  const documentBuffer = await superPdfMake(document, options)
+
+  logger('info', ['returning document', system, template, 'size', prettyBytes(Buffer.byteLength(documentBuffer))])
+  return getResponseObject({ ...req.body, base64: documentBuffer.toString('base64') })
 }
+
+module.exports = async (context, req) => await errorHandling(context, req, generate)
