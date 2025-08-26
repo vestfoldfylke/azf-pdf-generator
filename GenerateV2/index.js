@@ -1,6 +1,6 @@
 const Sjablong = require('@vtfk/sjablong')
 const merge = require('lodash.merge')
-const prettyBytes = require('pretty-bytes')
+const { prettifyBytes } = require('../lib/prettify-bytes')
 const { logger } = require('@vtfk/logger')
 const PDFGenerator = require('../lib/pdf-generate-v2/pdfgenerator.js')
 const getDocumentDefinition = require('../lib/document-definitions/index')
@@ -86,7 +86,7 @@ const generateV2 = async (context, req) => {
 
   // Generate the PDF
   const documentBuffer = await PDFGenerator.GeneratePDFFromHTML(markdownContent.html, documentDefinition, documentStyles, combinedMetadata)
-  logger('info', ['returning document', 'size', prettyBytes(Buffer.byteLength(documentBuffer))])
+  logger('info', ['returning document', 'size', prettifyBytes(Buffer.byteLength(documentBuffer))])
 
   return {
     body: {

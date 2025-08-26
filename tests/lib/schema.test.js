@@ -18,11 +18,11 @@ const validSchema = {
 
 describe('Validate document schema', () => {
   it('throws when nothing is passed', () => {
-    expect(() => validateSchema()).toThrowError(HTTPError)
+    expect(() => validateSchema()).toThrow(HTTPError)
   })
 
   it('throws when null is passed', () => {
-    expect(() => validateSchema(null)).toThrowError(HTTPError)
+    expect(() => validateSchema(null)).toThrow(HTTPError)
   })
 
   it('throws when template isn\'t found', () => {

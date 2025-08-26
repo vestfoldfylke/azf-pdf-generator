@@ -1,5 +1,5 @@
 const { logger } = require('@vtfk/logger')
-const prettyBytes = require('pretty-bytes')
+const { prettifyBytes } = require('../lib/prettify-bytes')
 const errorHandling = require('../lib/error-handling')
 const { superPdfMake } = require('../lib/pdfmake/index.js')
 const validateSchema = require('../lib/validate-schema')
@@ -19,7 +19,7 @@ const generate = async (context, req) => {
   const options = getPdfmakeOptions(type, version)
   const documentBuffer = await superPdfMake(document, options)
 
-  logger('info', ['returning document', system, template, 'size', prettyBytes(Buffer.byteLength(documentBuffer))])
+  logger('info', ['returning document', system, template, 'size', prettifyBytes(Buffer.byteLength(documentBuffer))])
   return getResponseObject({ ...req.body, base64: documentBuffer.toString('base64') })
 }
 
