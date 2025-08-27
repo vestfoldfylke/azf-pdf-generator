@@ -6,7 +6,7 @@
 
 Mikrotjeneste som genererer PDF- eller PDF/A-dokumenter basert på predefinerte maler og returnerer de som base64.
 
-## Dokuemtdefinisjoner
+## Dokumentdefinisjoner
 Dokumentdefinisjoner (logo, skrifttype og sånt shait) finner du her: [./lib/document-definitions/README.md](./lib/document-definitions/README.md)
 
 ## API-endepunkter
@@ -93,44 +93,37 @@ Respons:
 }
 ```
 
-### POST /generatev2
-Dette endepunktet er opprettet for å kunne sende mal inn sammen med requesten<br/>
-Endepunktet har også støtte for å bruke maler som ligger lagret på APIet.
+### POST /GenerateV2
+Dette endepunktet er opprettet for å sende mal inn sammen med request'en
 
-* Send inn template med requesten:<br>
-  Påkrevde properties: **template**
-* Bruk template som er lagret på APIet:<br>
-  Påkrevde properties: **system**, **templateId**
-
-Annet enn dette så fungerer endepunktet likt som **/generate**
-
+Påkrevde properties: **template**
 
 ## Maler
 
-Et system kan ha mange maler, her er en beskrivelse av alle de forskjellige dokumentmalene som er tilgjengelige for bruk i API-en.
+Et system kan ha mange maler, her er en beskrivelse av alle de forskjellige dokumentmalene som er tilgjengelige for bruk i API-et.
 
-| System  | Template   | Languages  | Description  |
-|---------|------------|------------|--------------|
-| minelev | varsel-fag | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#fag) |
-| minelev | varsel-orden | nb, nn   | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#orden) |
-| minelev | varsel-atferd | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#atferd) |
-| minelev | samtale | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#samtale-1) |
-| minelev | ikke-samtale | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#ikke-samtale) |
-| minelev | notat | nb  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#notat-1) |
-| minelev | bekreftelse-bedrift | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-bekreftelse-bedrift) |
-| minelev | bekreftelse | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-bekreftelse) |
-| minelev | laereplan | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-lokalplan-maal) |
-| minelev | tilbakemelding | nb, nn  | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-tilbakemelding) |
-| iop | hemmelig | nb | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#iop-hemmelig) |
-| smart | motereferat | nb, nn, en | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#smart-motereferat) |
-| vigo | KONTRAKT-response | nb | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#vigo-DOKUMENTTYPE-response) |
+| System  | Template            | Languages  | Description                                                                                                                                                                   |
+|---------|---------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| minelev | varsel-fag          | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#fag)                     |
+| minelev | varsel-orden        | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#orden)                   |
+| minelev | varsel-atferd       | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#atferd)                  |
+| minelev | samtale             | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#samtale-1)               |
+| minelev | ikke-samtale        | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#ikke-samtale)            |
+| minelev | notat               | nb         | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#notat-1)                 |
+| minelev | bekreftelse-bedrift | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-bekreftelse-bedrift) |
+| minelev | bekreftelse         | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-bekreftelse)         |
+| minelev | laereplan           | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-lokalplan-maal)      |
+| minelev | tilbakemelding      | nb, nn     | `data` skal være dokumentet fra MinElev documents. <br>[Format tilgjengelig her.](https://github.com/vtfk/minelev-api/blob/main/docs/postDocument.md#yff-tilbakemelding)      |
+| iop     | hemmelig            | nb         | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#iop-hemmelig)                                                                |
+| smart   | motereferat         | nb, nn, en | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#smart-motereferat)                                                           |
+| vigo    | KONTRAKT-response   | nb         | [Format tilgjengelig her.](https://github.com/vtfk/azf-pdf-generator/blob/main/docs/templates.md#vigo-DOKUMENTTYPE-response)                                                  |
 
-## PDFA
+## PDF/A
 
 PDF/A finnes i flere versjoner. Type `2` med versjon `B` (ISO 19005-2) er den vanligste for arkivering
 
-| Type | Version | Standard | Description |
-|------|---------|----------|-------------|
+| Type | Version | Standard    | Description                                                                 |
+|------|---------|-------------|-----------------------------------------------------------------------------|
 | 1    | A / B   | ISO 19005-1 | [Informasjon tilgjengelig her](https://en.wikipedia.org/wiki/PDF/A#pdf/a-1) |
 | 2    | A / B   | ISO 19005-2 | [Informasjon tilgjengelig her](https://en.wikipedia.org/wiki/PDF/A#pdf/a-2) |
 
@@ -147,13 +140,7 @@ PDF/A finnes i flere versjoner. Type `2` med versjon `B` (ISO 19005-2) er den va
 
 ## Publisere function
 
-For å publisere ny release til Azure, opprett en release i github i master, så publiseres functionen til prod.
-
-### Alternativ metode
-
-- `$ az login`
-- `$ func azure functionapp publish test-func-pdf-api-v1`
-- `$ func azure functionapp publish prod-func-pdf-api-v1`
+For å publisere ny release til Azure, opprett en release i github i main, så publiseres functionen til prod.
 
 ## Lisens
 

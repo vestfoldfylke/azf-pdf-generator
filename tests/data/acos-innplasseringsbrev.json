@@ -7,17 +7,17 @@
 	"data": {
 		"preview": true,
 		"timestamp": "01.01.2024",
-    "newSection": "Hva som helst",
-    "newCounty": "Vestfold fylkeskommune",
-    "newManager": "Helt sjef",
+		"newSection": "Hva som helst",
+		"newCounty": "Vestfold fylkeskommune",
+		"newManager": "Helt sjef",
 		"employeeName": "Jørgen Gunnarson",
 		"streetAddress": "Saurongata 44",
 		"zipCode": "1234",
 		"zipPlace": "Mordor",
 		"sender": "Toril Eeg",
-    "newJobTitle": "8530 - Rådgiver",
-    "legalClaimDate": "07.01.2024",
-    "specialOfficeNeeds": "Ja",
-    "specialOfficeNeedsDescription": "Pga mange vanskelige omstendigheter med både det ene og det andre, må Jørgen ha eget cellekontor med kaffetrakter og masasjestol."
+		"newJobTitle": "8530 - Rådgiver",
+		"legalClaimDate": "07.01.2024",
+		"specialOfficeNeeds": "Ja",
+		"specialOfficeNeedsDescription": "Pga mange vanskelige omstendigheter med både det ene og det andre, må Jørgen ha eget cellekontor med kaffetrakter og masasjestol."
 	}
 }

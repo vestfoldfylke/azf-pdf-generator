@@ -25,8 +25,8 @@ to: Navn Navnesen
 from: Ola Nordmann
 info: # Hvis en verdi ikke blir sendt med, vises den ikke i lista, med mindre noe annet er spesifisert.
   sector: "[Sektor/ seksjonsnivå]" # Uthevet sektor-felt over informasjonen
-  our-date: "[yyyy-mm-dd]" # ISO-formattert dato. Datoen blir formattert som den skal. Standard verdi om ingen er angitt: dagens dato
-  your-date: "[yyyy-mm-dd]" # ISO-formattert dato. Blir formattert.
+  our-date: "[yyyy-mm-dd]" # ISO-formatert dato. Datoen blir formatert som den skal. Standard verdi om ingen er angitt: dagens dato
+  your-date: "[yyyy-mm-dd]" # ISO-formatert dato. Blir formatert.
   our-reference: "[Vår referanse]" # Saks- og dokumentnummer
   your-reference: "[Deres referanse]"
   our-caseworker: "[Saksbehandler]"
