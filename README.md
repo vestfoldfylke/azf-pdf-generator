@@ -140,13 +140,7 @@ PDF/A finnes i flere versjoner. Type `2` med versjon `B` (ISO 19005-2) er den va
 
 ## Publisere function
 
-For å publisere ny release til Azure, opprett en release i github i master, så publiseres functionen til prod.
-
-### Alternativ metode
-
-- `$ az login`
-- `$ func azure functionapp publish vfkdlzfellesapipdfapi`
-- `$ func azure functionapp publish vfkplzfellesapipdfapi`
+For å publisere ny release til Azure, opprett en release i github i main, så publiseres functionen til prod.
 
 ## Lisens
 
