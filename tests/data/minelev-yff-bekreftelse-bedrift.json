@@ -8,10 +8,12 @@
       "timestamp": 1606252264318,
       "createdBy": "tes0101"
     },
-    "modified": [{
-      "timestamp": 1606252264318,
-      "modifiedBy": "tes0101"
-    }],
+    "modified": [
+      {
+        "timestamp": 1606252264318,
+        "modifiedBy": "tes0101"
+      }
+    ],
     "type": "yff",
     "variant": "bekreftelse",
     "student": {
@@ -33,9 +35,7 @@
     },
     "content": {
       "bekreftelse": {
-        "kopiPrEpost": [
-          "kari@nordmann.no"
-        ],
+        "kopiPrEpost": ["kari@nordmann.no"],
         "fraDato": "18.09.2020",
         "tilDato": "23.07.2021",
         "daysPerWeek": "2",

@@ -1,30 +1,32 @@
-const { test, describe } = require('node:test')
-const assert = require('node:assert')
-const HTTPError = require('../../lib/http-error')
+const { test, describe } = require("node:test")
+const assert = require("node:assert")
+const HTTPError = require("../../lib/http-error")
 
-describe('HTTPError tests', () => {
-  test('loads correctly', () => {
-    assert.strictEqual(typeof HTTPError, 'function')
+describe("HTTPError tests", () => {
+  test("loads correctly", () => {
+    assert.strictEqual(typeof HTTPError, "function")
   })
 
-  const error = new HTTPError(500, 'Something is wrong!')
+  const error = new HTTPError(500, "Something is wrong!")
 
-  test('should throw HTTPError', () => {
-    const throwError = () => { throw error }
+  test("should throw HTTPError", () => {
+    const throwError = () => {
+      throw error
+    }
     assert.throws(throwError, HTTPError)
   })
 
-  test('returns proper response object', () => {
+  test("returns proper response object", () => {
     const response = {
       status: 500,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: {
         error: {
           innerError: undefined,
           statusCode: 500,
-          message: 'Something is wrong!'
+          message: "Something is wrong!"
         }
       }
     }
@@ -32,19 +34,19 @@ describe('HTTPError tests', () => {
     assert.deepStrictEqual(error.toJSON(), response)
   })
 
-  const withInnerError = new HTTPError(500, 'Something is wrong!', { inner: 'error' })
+  const withInnerError = new HTTPError(500, "Something is wrong!", { inner: "error" })
 
-  test('returns innerError when provided', () => {
+  test("returns innerError when provided", () => {
     const response = {
       status: 500,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: {
         error: {
           statusCode: 500,
-          message: 'Something is wrong!',
-          innerError: { inner: 'error' }
+          message: "Something is wrong!",
+          innerError: { inner: "error" }
         }
       }
     }

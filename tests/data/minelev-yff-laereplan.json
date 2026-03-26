@@ -8,10 +8,12 @@
       "timestamp": 1606252264318,
       "createdBy": "tes0101"
     },
-    "modified": [{
-      "timestamp": 1606252264318,
-      "modifiedBy": "tes0101"
-    }],
+    "modified": [
+      {
+        "timestamp": 1606252264318,
+        "modifiedBy": "tes0101"
+      }
+    ],
     "type": "yff",
     "variant": "bekreftelse",
     "student": {
@@ -33,92 +35,104 @@
       "utplassering": {
         "id": "5d7f29d059e31d0007cc9ff5",
         "name": "Norges røde kors",
-        "maal": [{
-          "grep": {
-            "kode": "K3703",
-            "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-            "tittel": {
-              "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-              "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-              "en": "mestre tre ulike typer masseflyttingsmaskiner"
-            }
-          },
-          "programomraade": {
-            "kode": "ELFLY2----",
-            "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
-            "tittel": {
-              "nb": "Flyfag",
-              "nn": "Flyfag",
-              "en": "Aeronautics"
+        "maal": [
+          {
+            "grep": {
+              "kode": "K3703",
+              "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
+              "tittel": {
+                "nb": "mestre tre ulike typer masseflyttingsmaskiner",
+                "nn": "mestre tre ulike typer masseflyttingsmaskiner",
+                "en": "mestre tre ulike typer masseflyttingsmaskiner"
+              }
             },
-            "opplaeringssted": ["http://psi.udir.no/kl06/opplaeringssted_skole"]
-          },
-          "arbeidsoppgaver": "lede morgentrimmen"
-        }, {
-          "grep": {
-            "kode": "K3703",
-            "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-            "tittel": {
-              "nb": "bruke relevant måleutstyr",
-              "nn": "bruke relevant måleutstyr",
-              "en": "bruke relevant måleutstyr"
-            }
-          },
-          "programomraade": {
-            "kode": "ELFLY2----",
-            "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
-            "tittel": {
-              "nb": "Flyfag",
-              "nn": "Flyfag",
-              "en": "Aeronautics"
+            "programomraade": {
+              "kode": "ELFLY2----",
+              "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
+              "tittel": {
+                "nb": "Flyfag",
+                "nn": "Flyfag",
+                "en": "Aeronautics"
+              },
+              "opplaeringssted": [
+                "http://psi.udir.no/kl06/opplaeringssted_skole"
+              ]
             },
-            "opplaeringssted": ["http://psi.udir.no/kl06/opplaeringssted_skole"]
+            "arbeidsoppgaver": "lede morgentrimmen"
           },
-          "arbeidsoppgaver": "lede morgentrimmen"
-        }, {
-          "grep": {
-            "kode": "K3703",
-            "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-            "tittel": {
-              "nb": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
-              "nn": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
-              "en": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser"
-            }
-          },
-          "programomraade": {
-            "kode": "ELFLY2----",
-            "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
-            "tittel": {
-              "nb": "Flyfag",
-              "nn": "Flyfag",
-              "en": "Aeronautics"
+          {
+            "grep": {
+              "kode": "K3703",
+              "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
+              "tittel": {
+                "nb": "bruke relevant måleutstyr",
+                "nn": "bruke relevant måleutstyr",
+                "en": "bruke relevant måleutstyr"
+              }
             },
-            "opplaeringssted": ["http://psi.udir.no/kl06/opplaeringssted_skole"]
+            "programomraade": {
+              "kode": "ELFLY2----",
+              "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
+              "tittel": {
+                "nb": "Flyfag",
+                "nn": "Flyfag",
+                "en": "Aeronautics"
+              },
+              "opplaeringssted": [
+                "http://psi.udir.no/kl06/opplaeringssted_skole"
+              ]
+            },
+            "arbeidsoppgaver": "lede morgentrimmen"
           },
-          "arbeidsoppgaver": ""
-        }, {
-          "grep": {
-            "kode": "K3703",
-            "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-            "tittel": {
-              "nb": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
-              "nn": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
-              "en": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang"
-            }
+          {
+            "grep": {
+              "kode": "K3703",
+              "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
+              "tittel": {
+                "nb": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
+                "nn": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser",
+                "en": "utføre fundamentering, oppbygging og komprimering i henhold til tegninger og beskrivelser"
+              }
+            },
+            "programomraade": {
+              "kode": "ELFLY2----",
+              "url-data": "https://data.udir.no/kl06/v201906/programomraader/ELFLY2----",
+              "tittel": {
+                "nb": "Flyfag",
+                "nn": "Flyfag",
+                "en": "Aeronautics"
+              },
+              "opplaeringssted": [
+                "http://psi.udir.no/kl06/opplaeringssted_skole"
+              ]
+            },
+            "arbeidsoppgaver": ""
           },
-          "arbeidsoppgaver": "lede morgentrimmen"
-        }, {
-          "grep": {
-            "kode": "K3703",
-            "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
-            "tittel": {
-              "nb": "mestre tre ulike typer masseflyttingsmaskiner",
-              "nn": "mestre tre ulike typer masseflyttingsmaskiner",
-              "en": "mestre tre ulike typer masseflyttingsmaskiner"
-            }
+          {
+            "grep": {
+              "kode": "K3703",
+              "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
+              "tittel": {
+                "nb": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
+                "nn": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang",
+                "en": "gjøre rede for innholdet i relevant nasjonalt og internasjonalt regelverk som gjelder kundens rettigheter og plikter, herunder regler om klageadgang"
+              }
+            },
+            "arbeidsoppgaver": "lede morgentrimmen"
           },
-          "arbeidsoppgaver": "lede morgentrimmen"
-        }]
+          {
+            "grep": {
+              "kode": "K3703",
+              "url-data": "https://data.udir.no/kl06/v201906/kompetansemaal/K3703",
+              "tittel": {
+                "nb": "mestre tre ulike typer masseflyttingsmaskiner",
+                "nn": "mestre tre ulike typer masseflyttingsmaskiner",
+                "en": "mestre tre ulike typer masseflyttingsmaskiner"
+              }
+            },
+            "arbeidsoppgaver": "lede morgentrimmen"
+          }
+        ]
       },
       "year": "2020/2021"
     },
