@@ -1,3 +1,5 @@
+const { test, describe } = require('node:test')
+const assert = require('node:assert')
 const parseMarkdown = require('../../lib/parse-markdown')
 
 const frontmatter = `---
@@ -18,23 +20,23 @@ const markdown = "# Hi!\n\nWhat's up?"
 const markdownHtml = "<h1>Hi!</h1>\n<p>What's up?</p>"
 
 describe('Parse markdown', () => {
-  it('doesn\'t throw when parsing valid markdown', () => {
-    expect(() => parseMarkdown(markdown)).not.toThrow()
+  test('doesn\'t throw when parsing valid markdown', () => {
+    assert.doesNotThrow(() => parseMarkdown(markdown))
   })
 
-  it('parses markdown to correct html', () => {
+  test('parses markdown to correct html', () => {
     const { html } = parseMarkdown(markdown)
-    expect(html).toMatch(markdownHtml)
+    assert.ok(html.includes(markdownHtml))
   })
 
-  it('parses frontmatter yaml to correct object', () => {
+  test('parses frontmatter yaml to correct object', () => {
     const { metadata } = parseMarkdown(frontmatter)
-    expect(metadata).toEqual(frontmatterObject)
+    assert.deepStrictEqual(metadata, frontmatterObject)
   })
 
-  it('parses returns correct data when metadata and frontmatter is passed together', () => {
+  test('parses returns correct data when metadata and frontmatter is passed together', () => {
     const { html, metadata } = parseMarkdown(`${frontmatter}\n${markdown}`)
-    expect(html).toEqual(markdownHtml)
-    expect(metadata).toEqual(frontmatterObject)
+    assert.strictEqual(html, markdownHtml)
+    assert.deepStrictEqual(metadata, frontmatterObject)
   })
 })

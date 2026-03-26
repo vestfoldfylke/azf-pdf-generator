@@ -1,6 +1,8 @@
+const { test, describe } = require('node:test')
+const assert = require('node:assert')
 const generateDocumentFunc = require('../GenerateDocument')
-const { writeFile } = require('fs').promises
-const { join } = require('path')
+const { writeFile } = require('node:fs').promises
+const { join } = require('node:path')
 
 const testDocumentsTypes = [
   'acos-innplasseringsbrev',
@@ -27,39 +29,33 @@ const context = { log: console.log, invocationId: 'testing' }
 const req = { url: 'http://localhost/api/Generate' }
 
 describe('GenerateDocument function test', () => {
-  it('returns 400 when no body was provided', async () => {
+  test('returns 400 when no body was provided', async () => {
     const result = await generateDocumentFunc(context, req)
-    expect(result).toMatchObject({
-      status: 400,
-      body: { error: { message: 'No request body received!' } }
-    })
+    assert.strictEqual(result.status, 400)
+    assert.strictEqual(result.body.error.message, 'No request body received!')
   })
 
-  it('returns 400 if schema validation fails', async () => {
+  test('returns 400 if schema validation fails', async () => {
     const result = await generateDocumentFunc(context, { ...req, body: {} })
-    expect(result).toMatchObject({
-      status: 400,
-      body: { error: { message: 'Invalid request body' } }
-    })
+    assert.strictEqual(result.status, 400)
+    assert.strictEqual(result.body.error.message, 'Invalid request body')
   })
 
-  it('returns 404 if template wasn\'t found', async () => {
+  test('returns 404 if template wasn\'t found', async () => {
     const result = await generateDocumentFunc(context, { ...req, body: { system: 'minelev', template: 'not-found' } })
-    expect(result).toMatchObject({
-      status: 404,
-      body: { error: { message: 'Template not found!' } }
-    })
+    assert.strictEqual(result.status, 404)
+    assert.strictEqual(result.body.error.message, 'Template not found!')
   })
 
   testDocumentsTypes.forEach(type => {
     const testDocument = require(`./data/${type}.json`)
-    it(`${type} :: can parse and write returned base64 to .pdf file correctly`, async () => {
+    test(`${type} :: can parse and write returned base64 to .pdf file correctly`, async () => {
       const document = await generateDocumentFunc(context, { ...req, body: testDocument })
       const { base64 } = document.body.data
-      await expect(typeof base64).toBe('string')
+      assert.strictEqual(typeof base64, 'string')
 
       const buffer = Buffer.from(base64, 'base64')
-      await expect(buffer.byteLength).toBeGreaterThan(15000)
+      assert.ok(buffer.byteLength > 15000)
 
       await writeFile(join(__dirname, `./data/${type}.pdf`), buffer)
     })

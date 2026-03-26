@@ -1,3 +1,5 @@
+const { test, describe } = require('node:test')
+const assert = require('node:assert')
 const HTTPError = require('../../lib/http-error')
 const validateSchema = require('../../lib/validate-schema')
 
@@ -17,42 +19,39 @@ const validSchema = {
 }
 
 describe('Validate document schema', () => {
-  it('throws when nothing is passed', () => {
-    expect(() => validateSchema()).toThrow(HTTPError)
+  test('throws when nothing is passed', () => {
+    assert.throws(() => validateSchema(), HTTPError)
   })
 
-  it('throws when null is passed', () => {
-    expect(() => validateSchema(null)).toThrow(HTTPError)
+  test('throws when null is passed', () => {
+    assert.throws(() => validateSchema(null), HTTPError)
   })
 
-  it('throws when template isn\'t found', () => {
-    expect(() => validateSchema(validSchema, 'not-found')).toThrow()
+  test('throws when template isn\'t found', () => {
+    assert.throws(() => validateSchema(validSchema, 'not-found'))
   })
 
-  it('fails on validation when system is missing', () => {
-    expect(getValidationInnerError({ template: 'sak' }).summary)
-      .toEqual(["Missing required property 'system'"])
+  test('fails on validation when system is missing', () => {
+    assert.deepStrictEqual(getValidationInnerError({ template: 'sak' }).summary, ["Missing required property 'system'"])
   })
 
-  it('fails on validation when template is missing', () => {
-    expect(getValidationInnerError({ system: 'ting' }).summary)
-      .toEqual(["Missing required property 'template'"])
+  test('fails on validation when template is missing', () => {
+    assert.deepStrictEqual(getValidationInnerError({ system: 'ting' }).summary, ["Missing required property 'template'"])
   })
 
-  it('fails on validation when wrong type is passed', () => {
-    expect(getValidationInnerError({ system: 'sak', template: true }).summary)
-      .toEqual(['Property undefined should be of type string'])
+  test('fails on validation when wrong type is passed', () => {
+    assert.deepStrictEqual(getValidationInnerError({ system: 'sak', template: true }).summary, ['Property undefined should be of type string'])
   })
 
-  it('returns language \'nb\', empty data object, type \'\' and version \'\' when it isn\'t passed', () => {
+  test('returns language \'nb\', empty data object, type \'\' and version \'\' when it isn\'t passed', () => {
     const schema = { ...validSchema }
     validateSchema(schema)
-    expect(schema).toEqual({ ...schema, data: {}, language: 'nb' })
+    assert.deepStrictEqual(schema, { ...schema, data: {}, language: 'nb' })
   })
 
-  it('returns language \'nb\', empty data object, type \'2\' and version \'B\' when it is passed', () => {
+  test('returns language \'nb\', empty data object, type \'2\' and version \'B\' when it is passed', () => {
     const schema = { ...validSchema, type: '2', version: 'B' }
     validateSchema(schema)
-    expect(schema).toEqual({ ...schema, data: {}, language: 'nb' })
+    assert.deepStrictEqual(schema, { ...schema, data: {}, language: 'nb' })
   })
 })

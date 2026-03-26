@@ -1,18 +1,20 @@
+const { test, describe } = require('node:test')
+const assert = require('node:assert')
 const HTTPError = require('../../lib/http-error')
 
 describe('HTTPError tests', () => {
-  it('loads correctly', () => {
-    expect(typeof (HTTPError)).toBe('function')
+  test('loads correctly', () => {
+    assert.strictEqual(typeof HTTPError, 'function')
   })
 
   const error = new HTTPError(500, 'Something is wrong!')
 
-  it('should throw HTTPError', () => {
+  test('should throw HTTPError', () => {
     const throwError = () => { throw error }
-    expect(throwError).toThrow(HTTPError)
+    assert.throws(throwError, HTTPError)
   })
 
-  it('returns proper response object', () => {
+  test('returns proper response object', () => {
     const response = {
       status: 500,
       headers: {
@@ -20,18 +22,19 @@ describe('HTTPError tests', () => {
       },
       body: {
         error: {
+          innerError: undefined,
           statusCode: 500,
           message: 'Something is wrong!'
         }
       }
     }
 
-    expect(error.toJSON()).toEqual(response)
+    assert.deepStrictEqual(error.toJSON(), response)
   })
 
   const withInnerError = new HTTPError(500, 'Something is wrong!', { inner: 'error' })
 
-  it('returns innerError when provided', () => {
+  test('returns innerError when provided', () => {
     const response = {
       status: 500,
       headers: {
@@ -46,6 +49,6 @@ describe('HTTPError tests', () => {
       }
     }
 
-    expect(withInnerError.toJSON()).toEqual(response)
+    assert.deepStrictEqual(withInnerError.toJSON(), response)
   })
 })
