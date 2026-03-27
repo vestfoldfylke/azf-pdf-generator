@@ -1,245 +1,268 @@
-const { isoDate, prettyDate, lowercase, join, uppercase, variable, eq, ne, lt, gt, lte, gte, and, or, multiple, replace, capitalize, uppercaseFirst, objectContains, classIdentifier } = require('../../lib/helpers')
+const { test, describe } = require("node:test")
+const assert = require("node:assert")
+const {
+  isoDate,
+  prettyDate,
+  lowercase,
+  join,
+  uppercase,
+  variable,
+  eq,
+  ne,
+  lt,
+  gt,
+  lte,
+  gte,
+  and,
+  or,
+  multiple,
+  replace,
+  capitalize,
+  uppercaseFirst,
+  objectContains,
+  classIdentifier
+} = require("../../lib/helpers")
 
-describe('Test helper - logic', () => {
+describe("Test helper - logic", () => {
   const options = {}
 
-  it('eq / ===', () => {
-    expect(eq('Hei', 'Hade')).toBe(false)
-    expect(eq('Hei', 'Hei')).toBe(true)
+  test("eq / ===", () => {
+    assert.strictEqual(eq("Hei", "Hade"), false)
+    assert.strictEqual(eq("Hei", "Hei"), true)
   })
 
-  it('ne / !==', () => {
-    expect(ne('Hei', 'Hade')).toBe(true)
-    expect(ne('Hei', 'Hei')).toBe(false)
+  test("ne / !==", () => {
+    assert.strictEqual(ne("Hei", "Hade"), true)
+    assert.strictEqual(ne("Hei", "Hei"), false)
   })
 
-  it('lt / <', () => {
-    expect(lt(3, 10)).toBe(true)
-    expect(lt(42, 4)).toBe(false)
+  test("lt / <", () => {
+    assert.strictEqual(lt(3, 10), true)
+    assert.strictEqual(lt(42, 4), false)
   })
 
-  it('gt / >', () => {
-    expect(gt(3, 10)).toBe(false)
-    expect(gt(42, 4)).toBe(true)
+  test("gt / >", () => {
+    assert.strictEqual(gt(3, 10), false)
+    assert.strictEqual(gt(42, 4), true)
   })
 
-  it('lte / <=', () => {
-    expect(lte(10, 10)).toBe(true)
-    expect(lte(4, 42)).toBe(true)
-    expect(lte(6, 5)).toBe(false)
+  test("lte / <=", () => {
+    assert.strictEqual(lte(10, 10), true)
+    assert.strictEqual(lte(4, 42), true)
+    assert.strictEqual(lte(6, 5), false)
   })
 
-  it('gte / >=', () => {
-    expect(gte(10, 10)).toBe(true)
-    expect(gte(6, 5)).toBe(true)
-    expect(gte(4, 42)).toBe(false)
+  test("gte / >=", () => {
+    assert.strictEqual(gte(10, 10), true)
+    assert.strictEqual(gte(6, 5), true)
+    assert.strictEqual(gte(4, 42), false)
   })
 
-  it('and / &&', () => {
-    expect(and(true, 'hei', options)).toBe(true)
-    expect(and(false, '', options)).toBe(false)
-    expect(and(true, false, false, true, options)).toBe(false)
+  test("and / &&", () => {
+    assert.strictEqual(and(true, "hei", options), true)
+    assert.strictEqual(and(false, "", options), false)
+    assert.strictEqual(and(true, false, false, true, options), false)
   })
 
-  it('or / ||', () => {
-    expect(or('', 'hei', options)).toBe(true)
-    expect(or(false, '', options)).toBe(false)
-    expect(or(false, false, false, true, options)).toBe(true)
+  test("or / ||", () => {
+    assert.strictEqual(or("", "hei", options), true)
+    assert.strictEqual(or(false, "", options), false)
+    assert.strictEqual(or(false, false, false, true, options), true)
   })
 })
 
-describe('Test helper - variable', () => {
-  it('assigns handlebars variable', () => {
+describe("Test helper - variable", () => {
+  test("assigns handlebars variable", () => {
     const options = { data: { root: {} } }
-    variable('VAR', 'Er no tull!', options)
-    expect(options.data.root.VAR).toBe('Er no tull!')
+    variable("VAR", "Er no tull!", options)
+    assert.strictEqual(options.data.root.VAR, "Er no tull!")
   })
 })
 
-describe('Test helper - multiple', () => {
-  it('returns false on no value', () => {
-    expect(multiple()).toBe(false)
+describe("Test helper - multiple", () => {
+  test("returns false on no value", () => {
+    assert.strictEqual(multiple(), false)
   })
 
-  it('returns false on empty array', () => {
-    expect(multiple([])).toBe(false)
+  test("returns false on empty array", () => {
+    assert.strictEqual(multiple([]), false)
   })
 
-  it('returns false on array with empty object', () => {
-    expect(multiple([{}])).toBe(false)
+  test("returns false on array with empty object", () => {
+    assert.strictEqual(multiple([{}]), false)
   })
 
-  it('returns false on single value', () => {
-    expect(multiple(['Gro'])).toBe(false)
+  test("returns false on single value", () => {
+    assert.strictEqual(multiple(["Gro"]), false)
   })
 
-  it('returns true on multiple values', () => {
-    expect(multiple(['Gro', 'Kåre'])).toBe(true)
-  })
-})
-
-describe('Test helper - replace', () => {
-  it('returns correctly replaced value', () => {
-    expect(replace('hei', 'hade', 'hei på deg')).toBe('hade på deg')
-  })
-
-  it('returns input if nothing was replaced', () => {
-    expect(replace('hei', 'hade', 'god helg')).toBe('god helg')
-  })
-
-  it('returns nothing if nothing is to be replaced', () => {
-    expect(replace('hei', 'hade')).toBe('')
+  test("returns true on multiple values", () => {
+    assert.strictEqual(multiple(["Gro", "Kåre"]), true)
   })
 })
 
-describe('Test helper - isoDate', () => {
-  it('returns correct ISO-date from timestamp', () => {
+describe("Test helper - replace", () => {
+  test("returns correctly replaced value", () => {
+    assert.strictEqual(replace("hei", "hade", "hei på deg"), "hade på deg")
+  })
+
+  test("returns input if nothing was replaced", () => {
+    assert.strictEqual(replace("hei", "hade", "god helg"), "god helg")
+  })
+
+  test("returns nothing if nothing is to be replaced", () => {
+    assert.strictEqual(replace("hei", "hade"), "")
+  })
+})
+
+describe("Test helper - isoDate", () => {
+  test("returns correct ISO-date from timestamp", () => {
     const date = new Date()
-    expect(isoDate(date.getTime())).toBe(date.toISOString())
+    assert.strictEqual(isoDate(date.getTime()), date.toISOString())
   })
 
-  it('returns input if passed string isn\'t a valid date', () => {
-    expect(isoDate('test')).toBe('test')
-  })
-})
-
-describe('Test helper - prettyDate', () => {
-  it('returns correctly formatted date from timestamp', () => {
-    expect(prettyDate(1610036019845)).toBe('07.01.2021')
-  })
-
-  it('returns input if passed string isn\'t a valid date', () => {
-    expect(prettyDate('test')).toBe('test')
+  test("returns input if passed string isn't a valid date", () => {
+    assert.strictEqual(isoDate("test"), "test")
   })
 })
 
-describe('Test helper - capitalize', () => {
-  it('returns capitalized data', () => {
-    expect(capitalize('heLlo')).toBe('Hello')
+describe("Test helper - prettyDate", () => {
+  test("returns correctly formatted date from timestamp", () => {
+    assert.strictEqual(prettyDate(1610036019845), "07.01.2021")
   })
 
-  it('returns empty string if input is an empty string', () => {
-    expect(capitalize('')).toBe('')
-  })
-
-  it('returns empty string if input isn\'t a string', () => {
-    expect(capitalize({})).toBe('')
+  test("returns input if passed string isn't a valid date", () => {
+    assert.strictEqual(prettyDate("test"), "test")
   })
 })
 
-describe('Test helper - uppercaseFirst', () => {
-  it('returns large first character data', () => {
-    expect(uppercaseFirst('heLlo')).toBe('HeLlo')
+describe("Test helper - capitalize", () => {
+  test("returns capitalized data", () => {
+    assert.strictEqual(capitalize("heLlo"), "Hello")
   })
 
-  it('returns empty string if input is an empty string', () => {
-    expect(uppercaseFirst('')).toBe('')
+  test("returns empty string if input is an empty string", () => {
+    assert.strictEqual(capitalize(""), "")
   })
 
-  it('returns empty string if input isn\'t a string', () => {
-    expect(uppercaseFirst({})).toBe('')
-  })
-})
-
-describe('Test helper - uppercase', () => {
-  it('returns uppercase date', () => {
-    expect(uppercase('heLlo')).toBe('HELLO')
-  })
-
-  it('returns empty string if input isn\'t a string', () => {
-    expect(uppercase({})).toBe('')
+  test("returns empty string if input isn't a string", () => {
+    assert.strictEqual(capitalize({}), "")
   })
 })
 
-describe('Test helper - lowercase', () => {
-  it('returns lowercased date', () => {
-    expect(lowercase('HELLO')).toBe('hello')
+describe("Test helper - uppercaseFirst", () => {
+  test("returns large first character data", () => {
+    assert.strictEqual(uppercaseFirst("heLlo"), "HeLlo")
   })
 
-  it('returns empty string if input isn\'t a string', () => {
-    expect(lowercase({})).toBe('')
-  })
-})
-
-describe('Test helper - join', () => {
-  it('returns empty string on no input', () => {
-    expect(join()).toBe('')
+  test("returns empty string if input is an empty string", () => {
+    assert.strictEqual(uppercaseFirst(""), "")
   })
 
-  it('returns empty string if input isn\'t a string', () => {
-    expect(join(true)).toBe('')
-  })
-
-  it('returns empty string on empty array', () => {
-    expect(join([])).toBe('')
-  })
-
-  it('returns simple value on one input', () => {
-    expect(join(['Ape'])).toBe('Ape')
-  })
-
-  it('returns joined value on two inputs', () => {
-    expect(join(['Ape', 'Banan'])).toBe('Ape og Banan')
-  })
-
-  it('returns joined value with comma on three or more inputs', () => {
-    expect(join(['Ape', 'Banan', 'Kake'])).toBe('Ape, Banan og Kake')
-    expect(join(['Ape', 'Banan', 'Kake', 'Marsipan'])).toBe('Ape, Banan, Kake og Marsipan')
-  })
-
-  it('returns value joined with custom last part', () => {
-    expect(join(['Ape', 'Banan'], 'eller')).toBe('Ape eller Banan')
-  })
-
-  it('filters out empty values', () => {
-    expect(join(['Ape', '', 'Banan', '', ''])).toBe('Ape og Banan')
+  test("returns empty string if input isn't a string", () => {
+    assert.strictEqual(uppercaseFirst({}), "")
   })
 })
 
-describe('Test helper - objectContains', () => {
+describe("Test helper - uppercase", () => {
+  test("returns uppercase date", () => {
+    assert.strictEqual(uppercase("heLlo"), "HELLO")
+  })
+
+  test("returns empty string if input isn't a string", () => {
+    assert.strictEqual(uppercase({}), "")
+  })
+})
+
+describe("Test helper - lowercase", () => {
+  test("returns lowercased date", () => {
+    assert.strictEqual(lowercase("HELLO"), "hello")
+  })
+
+  test("returns empty string if input isn't a string", () => {
+    assert.strictEqual(lowercase({}), "")
+  })
+})
+
+describe("Test helper - join", () => {
+  test("returns empty string on no input", () => {
+    assert.strictEqual(join(), "")
+  })
+
+  test("returns empty string if input isn't a string", () => {
+    assert.strictEqual(join(true), "")
+  })
+
+  test("returns empty string on empty array", () => {
+    assert.strictEqual(join([]), "")
+  })
+
+  test("returns simple value on one input", () => {
+    assert.strictEqual(join(["Ape"]), "Ape")
+  })
+
+  test("returns joined value on two inputs", () => {
+    assert.strictEqual(join(["Ape", "Banan"]), "Ape og Banan")
+  })
+
+  test("returns joined value with comma on three or more inputs", () => {
+    assert.strictEqual(join(["Ape", "Banan", "Kake"]), "Ape, Banan og Kake")
+    assert.strictEqual(join(["Ape", "Banan", "Kake", "Marsipan"]), "Ape, Banan, Kake og Marsipan")
+  })
+
+  test("returns value joined with custom last part", () => {
+    assert.strictEqual(join(["Ape", "Banan"], "eller"), "Ape eller Banan")
+  })
+
+  test("filters out empty values", () => {
+    assert.strictEqual(join(["Ape", "", "Banan", "", ""]), "Ape og Banan")
+  })
+})
+
+describe("Test helper - objectContains", () => {
   const obj = {
     id: 1,
-    nb: 'Du har manglende vurderingsgrunnlag',
-    nn: 'Du har manglande vurderingsgrunnlag',
-    en: 'You have a lack of assessments'
+    nb: "Du har manglende vurderingsgrunnlag",
+    nn: "Du har manglande vurderingsgrunnlag",
+    en: "You have a lack of assessments"
   }
 
-  it('returns false on no input', () => {
-    expect(objectContains()).toBe(false)
+  test("returns false on no input", () => {
+    assert.strictEqual(objectContains(), false)
   })
 
-  it('returns true on empty input', () => {
-    expect(objectContains([])).toBe(true)
+  test("returns true on empty input", () => {
+    assert.strictEqual(objectContains([]), true)
   })
 
-  it('returns true on valid input and text found', () => {
-    expect(objectContains(obj, 'vurderingsgrunnlag')).toBe(true)
+  test("returns true on valid input and text found", () => {
+    assert.strictEqual(objectContains(obj, "vurderingsgrunnlag"), true)
   })
 
-  it('returns false on valid input and text not found', () => {
-    expect(objectContains(obj, 'heihei')).toBe(false)
+  test("returns false on valid input and text not found", () => {
+    assert.strictEqual(objectContains(obj, "heihei"), false)
   })
 })
 
-describe('Test helper - classIdentifier', () => {
-  it('returns "nb" from class object when it exists', () => {
+describe("Test helper - classIdentifier", () => {
+  test('returns "nb" from class object when it exists', () => {
     const obj = {
-      id: '01234567',
-      name: 'TEST/201NOR1208',
-      nb: 'Norsk hovedmål, skriftlig',
-      nn: 'Norsk hovudmål, skriftleg',
-      en: 'Norwegian as 1st lang, written'
+      id: "01234567",
+      name: "TEST/201NOR1208",
+      nb: "Norsk hovedmål, skriftlig",
+      nn: "Norsk hovudmål, skriftleg",
+      en: "Norwegian as 1st lang, written"
     }
     const identifier = classIdentifier(obj.nb, obj.name)
-    expect(identifier).toBe(obj.nb)
+    assert.strictEqual(identifier, obj.nb)
   })
 
-  it('returns "name" from class object when "nb" doesnt exist', () => {
+  test('returns "name" from class object when "nb" doesnt exist', () => {
     const obj = {
-      id: '76543210',
-      name: 'TEST/201NOR1209'
+      id: "76543210",
+      name: "TEST/201NOR1209"
     }
     const identifier = classIdentifier(obj.nb, obj.name)
-    expect(identifier).toBe(obj.name)
+    assert.strictEqual(identifier, obj.name)
   })
 })

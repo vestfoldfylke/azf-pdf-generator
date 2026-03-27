@@ -1,11 +1,11 @@
 module.exports = {
   defaultFooterData: {
-    postalAddress: 'Vestfold fylkeskommune\nPostboks 1213 Trudvang\n3105 Tønsberg',
-    visitingAddress: 'Svend Foyns gate 9, Tønsberg',
-    phone: '33 34 40 00',
-    email: 'post@vestfoldfylke.no',
-    orgnr: '929 882 385',
-    url: 'vestfoldfylke.no'
+    postalAddress: "Vestfold fylkeskommune\nPostboks 1213 Trudvang\n3105 Tønsberg",
+    visitingAddress: "Svend Foyns gate 9, Tønsberg",
+    phone: "33 34 40 00",
+    email: "post@vestfoldfylke.no",
+    orgnr: "929 882 385",
+    url: "vestfoldfylke.no"
   },
   logoSvg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 156 91" style="enable-background:new 0 0 156 91;" xml:space="preserve">

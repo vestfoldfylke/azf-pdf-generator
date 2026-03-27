@@ -1,31 +1,34 @@
-const getResponseObject = require('../../lib/get-response-object')
+const { test, describe } = require("node:test")
+const assert = require("node:assert")
+const getResponseObject = require("../../lib/get-response-object")
 
-describe('Response Object tests', () => {
-  it('loads method correctly', () => {
-    expect(typeof (getResponseObject)).toBe('function')
+describe("Response Object tests", () => {
+  test("loads method correctly", () => {
+    assert.strictEqual(typeof getResponseObject, "function")
   })
 
-  it('returns a proper response object for objects', () => {
-    const response = { hello: 'world' }
+  test("returns a proper response object for objects", () => {
+    const response = { hello: "world" }
     const azureResponse = {
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: {
-        data: response
+        data: response,
+        count: undefined
       }
     }
 
-    expect(getResponseObject(response)).toEqual(azureResponse)
+    assert.deepStrictEqual(getResponseObject(response), azureResponse)
   })
 
-  it('returns a proper response object for arrays', () => {
-    const response = [{ hello: 'world' }, { hello: 'there' }]
+  test("returns a proper response object for arrays", () => {
+    const response = [{ hello: "world" }, { hello: "there" }]
     const azureResponse = {
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: {
         data: response,
@@ -33,16 +36,16 @@ describe('Response Object tests', () => {
       }
     }
 
-    expect(getResponseObject(response)).toEqual(azureResponse)
+    assert.deepStrictEqual(getResponseObject(response), azureResponse)
   })
 
-  it('returns correct default status code', () => {
+  test("returns correct default status code", () => {
     const response = getResponseObject({})
-    expect(response.status).toBe(200)
+    assert.strictEqual(response.status, 200)
   })
 
-  it('returns correct status code when provided', () => {
+  test("returns correct status code when provided", () => {
     const response = getResponseObject({}, 500)
-    expect(response.status).toBe(500)
+    assert.strictEqual(response.status, 500)
   })
 })

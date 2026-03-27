@@ -1,35 +1,35 @@
-const Sjablong = require('@vtfk/sjablong')
-const merge = require('lodash.merge')
-const { prettifyBytes } = require('../lib/prettify-bytes')
-const { logger } = require('@vtfk/logger')
-const PDFGenerator = require('../lib/pdf-generate-v2/pdfgenerator.js')
-const getDocumentDefinition = require('../lib/document-definitions/index')
-const errorHandling = require('../lib/error-handling')
-const HTTPError = require('../lib/http-error')
+const Sjablong = require("@vtfk/sjablong")
+const merge = require("lodash.merge")
+const { prettifyBytes } = require("../lib/prettify-bytes")
+const { logger } = require("@vestfoldfylke/loglady")
+const PDFGenerator = require("../lib/pdf-generate-v2/pdfgenerator.js")
+const getDocumentDefinition = require("../lib/document-definitions/index")
+const errorHandling = require("../lib/error-handling")
+const HTTPError = require("../lib/http-error")
 
 const decodeBase64 = (encodedString) => {
   // Input validation
   if (!encodedString) {
-    throw new Error('No input string provided')
+    throw new Error("No input string provided")
   }
 
   // Create buffer from base64
-  const buff = Buffer.from(encodedString, 'base64')
+  const buff = Buffer.from(encodedString, "base64")
   // Output as utf-8
-  return buff.toString('utf8')
+  return buff.toString("utf8")
 }
 
-const generateV2 = async (context, req) => {
-  logger('info', 'start')
+const generateV2 = async (_context, req) => {
+  logger.info("start")
 
   // Input validation
-  if (!req || !req.body) {
-    throw new HTTPError(400, 'Request is empty')
+  if (!req?.body) {
+    throw new HTTPError(400, "Request is empty")
   }
 
   // Determine what template text to use
   if (!req.body.template) {
-    throw new HTTPError(400, 'You have to provide template to generate PDF', 'No template is provided')
+    throw new HTTPError(400, "You have to provide template to generate PDF", "No template is provided")
   }
 
   // Decode the template received in the request
@@ -61,7 +61,7 @@ const generateV2 = async (context, req) => {
   const markdownContent = Sjablong.getHTMLandMetadataFromMarkdown(replaced)
 
   // Combine the metadata again if applicable
-  if (markdownContent && markdownContent.metadata) {
+  if (markdownContent?.metadata) {
     combinedMetadata = merge(markdownContent.metadata, combinedMetadata)
   }
 
@@ -70,7 +70,7 @@ const generateV2 = async (context, req) => {
   let documentDefinition
   let documentStyles
   if (documentDefinitionId) {
-    const [definition, defaultStyles] = getDocumentDefinition(documentDefinitionId, combinedMetadata.language || 'nb')
+    const [definition, defaultStyles] = getDocumentDefinition(documentDefinitionId, combinedMetadata.language || "nb")
 
     if (!definition) {
       throw new HTTPError(404, `Could not find document definition '${documentDefinitionId}'`)
@@ -86,12 +86,12 @@ const generateV2 = async (context, req) => {
 
   // Generate the PDF
   const documentBuffer = await PDFGenerator.GeneratePDFFromHTML(markdownContent.html, documentDefinition, documentStyles, combinedMetadata)
-  logger('info', ['returning document', 'size', prettifyBytes(Buffer.byteLength(documentBuffer))])
+  logger.info("returning document - size {size}", prettifyBytes(Buffer.byteLength(documentBuffer)))
 
   return {
     body: {
       data: combinedMetadata,
-      base64: documentBuffer.toString('base64')
+      base64: documentBuffer.toString("base64")
     }
   }
 }

@@ -1,45 +1,34 @@
 {
   "name": "azf-pdf-generator",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "",
   "scripts": {
-    "test": "npm run test:jest && npm run test:lint",
-    "test:generate": "jest ./tests/generate-document.test.js",
-    "test:generateV2Func": "jest ./tests/generate-document-v2.test.js",
-    "test:generateV2": "jest ./tests/lib/pdf-generate-v2/pdfgenerator.test.js",
-    "test:jest": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:lint": "standard",
+    "test": "biome check && node --test tests/**/*.test.js",
+    "node:test": "node --test",
+    "test:generate": "node --test ./tests/generate-document.test.js",
+    "test:generateV2Func": "node --test ./tests/generate-document-v2.test.js",
+    "test:generateV2": "node --test ./tests/lib/pdf-generate-v2/pdfgenerator.test.js",
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "start": "func start"
   },
   "author": "",
   "dependencies": {
-    "@vtfk/logger": "^6.3.4",
+    "@vestfoldfylke/loglady": "^1.5.3",
     "@vtfk/sjablong": "^1.0.2",
-    "ajv": "^8.17.1",
+    "ajv": "^8.18.0",
     "handlebars": "^4.7.8",
-    "html-to-pdfmake": "^2.5.31",
+    "html-to-pdfmake": "^2.5.33",
     "jsdom": "^26.1.0",
     "lodash.merge": "4.6.2",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "markdown-it-front-matter": "^0.2.4",
-    "pdfmake": "^0.2.20",
+    "pdfmake": "^0.2.23",
     "yaml-front-matter": "4.1.1"
   },
   "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "jest": "^30.0.5",
-    "standard": "^17.1.2"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
-  },
-  "env": {
-    "node": true,
-    "jest": true
+    "@biomejs/biome": "2.4.9",
+    "@types/jest": "^30.0.0"
   }
 }

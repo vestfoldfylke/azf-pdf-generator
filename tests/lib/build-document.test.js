@@ -1,27 +1,29 @@
-const buildDocument = require('../../lib/generate-document')
+const { test, describe } = require("node:test")
+const assert = require("node:assert")
+const buildDocument = require("../../lib/generate-document")
 
-const testTemplate = '---\ndefinition: brevmal\nlanguage: nb\n---\n# Hello, {{ name }}!'
-const testData = { name: 'Kjell' }
+const testTemplate = "---\ndefinition: brevmal\nlanguage: nb\n---\n# Hello, {{ name }}!"
+const testData = { name: "Kjell" }
 
 const build = () => buildDocument(testTemplate, testData)
 
-describe('Build document', () => {
-  it('doesn\'t throw when building document', () => {
-    expect(() => build()).not.toThrow()
+describe("Build document", () => {
+  test("doesn't throw when building document", () => {
+    assert.doesNotThrow(() => build())
   })
 
-  it('returned document is an object', () => {
+  test("returned document is an object", () => {
     const document = build()
-    expect(typeof document).toBe('object')
+    assert.strictEqual(typeof document, "object")
   })
 
-  it('returned document can be converted to JSON', () => {
+  test("returned document can be converted to JSON", () => {
     const document = build()
-    expect(() => JSON.stringify(document)).not.toThrow()
+    assert.doesNotThrow(() => JSON.stringify(document))
   })
 
-  it('returned document contains \'Hello, Kjell!\', so we know that handlebars did it\'s job', () => {
+  test("returned document contains 'Hello, Kjell!', so we know that handlebars did it's job", () => {
     const document = build()
-    expect(JSON.stringify(document)).toContain('Hello, Kjell!')
+    assert.ok(JSON.stringify(document).includes("Hello, Kjell!"))
   })
 })

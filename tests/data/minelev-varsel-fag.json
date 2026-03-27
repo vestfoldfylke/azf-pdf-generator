@@ -8,10 +8,12 @@
       "timestamp": 1606252264318,
       "createdBy": "tes0101"
     },
-    "modified": [{
-      "timestamp": 1606252264318,
-      "modifiedBy": "tes0101"
-    }],
+    "modified": [
+      {
+        "timestamp": 1606252264318,
+        "modifiedBy": "tes0101"
+      }
+    ],
     "type": "varsel",
     "variant": "fag",
     "student": {
@@ -41,7 +43,8 @@
           "nb": "Norsk hovedmål, skriftlig",
           "nn": "Norsk hovudmål, skriftleg",
           "en": "Norwegian as 1st lang, written"
-        }, {
+        },
+        {
           "id": "76543210",
           "name": "TEST/201NOR1209"
         }
@@ -52,13 +55,14 @@
           "nb": "Du har manglende vurderingsgrunnlag",
           "nn": "Du har manglande vurderingsgrunnlag",
           "en": "You have a lack of assessments"
-        }, {
+        },
+        {
           "id": 2,
           "nb": "Du har udokumentert fravær",
           "nn": "Du har udokumentert fråvær",
           "en": "You have undocumented attendence"
         }
-    ]
+      ]
     },
     "teacher": {
       "username": "tes0101",
@@ -73,7 +77,7 @@
     },
     "isEncrypted": false,
     "status": [
-        {
+      {
         "status": "queued",
         "timestamp": 1606252264318
       }

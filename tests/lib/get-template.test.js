@@ -1,27 +1,23 @@
-const getTemplate = require('../../lib/get-template')
+const { test, describe } = require("node:test")
+const assert = require("node:assert")
+const getTemplate = require("../../lib/get-template")
 
-describe('Get template', () => {
-  it('throws when system isn\'t found', async () => {
-    await expect(getTemplate('not-found', 'not-found'))
-      .rejects
-      .toThrow('Template not found!')
+describe("Get template", () => {
+  test("throws when system isn't found", async () => {
+    await assert.rejects(getTemplate("not-found", "not-found"), { message: "Template not found!" })
   })
 
-  it('throws when template isn\'t found', async () => {
-    await expect(getTemplate('minelev', 'not-found'))
-      .rejects
-      .toThrow('Template not found!')
+  test("throws when template isn't found", async () => {
+    await assert.rejects(getTemplate("minelev", "not-found"), { message: "Template not found!" })
   })
 
-  it('fallback to \'nb\' when template for language isn\'t found', async () => {
-    await expect(getTemplate('minelev', 'varsel/fag', 'en'))
-      .resolves
-      .toContain('language: nb')
+  test("fallback to 'nb' when template for language isn't found", async () => {
+    const result = await getTemplate("minelev", "varsel/fag", "en")
+    assert.ok(result.includes("language: nb"))
   })
 
-  it('returns template', async () => {
-    await expect(getTemplate('minelev', 'varsel/fag'))
-      .resolves
-      .toContain('definition: brevmal')
+  test("returns template", async () => {
+    const result = await getTemplate("minelev", "varsel/fag")
+    assert.ok(result.includes("definition: brevmal"))
   })
 })
