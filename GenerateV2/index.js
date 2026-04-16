@@ -2,7 +2,7 @@ const Sjablong = require("@vtfk/sjablong")
 const merge = require("lodash.merge")
 const { prettifyBytes } = require("../lib/prettify-bytes")
 const { logger } = require("@vestfoldfylke/loglady")
-const PDFGenerator = require("../lib/pdf-generate-v2/pdfgenerator.js")
+const { GeneratePDFFromHTML } = require("../lib/pdf-generate-v2/pdfgenerator.js")
 const getDocumentDefinition = require("../lib/document-definitions/index")
 const errorHandling = require("../lib/error-handling")
 const HTTPError = require("../lib/http-error")
@@ -85,7 +85,7 @@ const generateV2 = async (_context, req) => {
   }
 
   // Generate the PDF
-  const documentBuffer = await PDFGenerator.GeneratePDFFromHTML(markdownContent.html, documentDefinition, documentStyles, combinedMetadata)
+  const documentBuffer = await GeneratePDFFromHTML(markdownContent.html, documentDefinition, documentStyles, combinedMetadata)
   logger.info("returning document - size {size}", prettifyBytes(Buffer.byteLength(documentBuffer)))
 
   return {
