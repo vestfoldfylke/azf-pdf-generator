@@ -1,72 +1,61 @@
+const { app } = require("@azure/functions")
+const { logger } = require("@vestfoldfylke/loglady")
 const Sjablong = require("@vtfk/sjablong")
 const merge = require("lodash.merge")
-const { prettifyBytes } = require("../lib/prettify-bytes")
-const { logger } = require("@vestfoldfylke/loglady")
-const { GeneratePDFFromHTML } = require("../lib/pdf-generate-v2/pdfgenerator.js")
-const getDocumentDefinition = require("../lib/document-definitions/index")
-const errorHandling = require("../lib/error-handling")
-const HTTPError = require("../lib/http-error")
+const { prettifyBytes } = require("../../lib/prettify-bytes")
+const { GeneratePDFFromHTML } = require("../../lib/pdf-generate-v2/pdfgenerator.js")
+const getDocumentDefinition = require("../../lib/document-definitions/index")
+const errorHandling = require("../../lib/error-handling")
+const HTTPError = require("../../lib/http-error")
 
 const decodeBase64 = (encodedString) => {
-  // Input validation
   if (!encodedString) {
     throw new Error("No input string provided")
   }
 
-  // Create buffer from base64
   const buff = Buffer.from(encodedString, "base64")
-  // Output as utf-8
   return buff.toString("utf8")
 }
 
-const generateV2 = async (_context, req) => {
+const generateV2 = async (request, _context) => {
   logger.info("start")
 
-  // Input validation
-  if (!req?.body) {
+  const body = await request.json().catch(() => null)
+
+  if (!body) {
     throw new HTTPError(400, "Request is empty")
   }
 
-  // Determine what template text to use
-  if (!req.body.template) {
+  if (!body.template) {
     throw new HTTPError(400, "You have to provide template to generate PDF", "No template is provided")
   }
 
-  // Decode the template received in the request
-  const template = decodeBase64(req.body.template)
+  const template = decodeBase64(body.template)
 
-  // CombinedMetadata - this will be a combination of req.body.data, schemaDefaults and markdownContent.metadata
   let combinedMetadata = {}
 
-  // Generate schema and extract any default values from it
   const schema = Sjablong.generateSchema(template)
-  const schemaDefaults = Sjablong.createObjectFromSchema(schema, true, req.body.preview)
+  const schemaDefaults = Sjablong.createObjectFromSchema(schema, true, body.preview)
   if (schemaDefaults) {
     combinedMetadata = schemaDefaults
   }
 
-  // Combine the schema default data with req.body.data if applicable
-  if (req.body.data) {
-    combinedMetadata = merge(combinedMetadata, req.body.data)
+  if (body.data) {
+    combinedMetadata = merge(combinedMetadata, body.data)
   }
 
-  // Validate the data against the schema
-  if (!req.body.preview) {
+  if (!body.preview) {
     Sjablong.validateData(schema, combinedMetadata)
   }
-  // Replace all placeholder values in the template
-  const replaced = Sjablong.replacePlaceholders(template, combinedMetadata, { preview: req.body.preview })
+  const replaced = Sjablong.replacePlaceholders(template, combinedMetadata, { preview: body.preview })
 
-  // Convert the template to HTML
   const markdownContent = Sjablong.getHTMLandMetadataFromMarkdown(replaced)
 
-  // Combine the metadata again if applicable
   if (markdownContent?.metadata) {
     combinedMetadata = merge(markdownContent.metadata, combinedMetadata)
   }
 
-  // Attempt to get the document template definition
-  const documentDefinitionId = req.body.documentDefinitionId || combinedMetadata.documentDefinitionId || combinedMetadata.definition
+  const documentDefinitionId = body.documentDefinitionId || combinedMetadata.documentDefinitionId || combinedMetadata.definition
   let documentDefinition
   let documentStyles
   if (documentDefinitionId) {
@@ -84,16 +73,24 @@ const generateV2 = async (_context, req) => {
     documentStyles = defaultStyles
   }
 
-  // Generate the PDF
   const documentBuffer = await GeneratePDFFromHTML(markdownContent.html, documentDefinition, documentStyles, combinedMetadata)
   logger.info("returning document - size {size}", prettifyBytes(Buffer.byteLength(documentBuffer)))
 
   return {
-    body: {
+    jsonBody: {
       data: combinedMetadata,
       base64: documentBuffer.toString("base64")
     }
   }
 }
 
-module.exports = async (context, req) => await errorHandling(context, req, generateV2)
+const handler = (request, context) => errorHandling(request, context, generateV2)
+
+app.http("GenerateV2", {
+  methods: ["POST"],
+  authLevel: "function",
+  route: "generatev2",
+  handler
+})
+
+module.exports = handler

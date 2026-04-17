@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const buildDocument = require("../../lib/generate-document")
 
 const testTemplate = "---\ndefinition: brevmal\nlanguage: nb\n---\n# Hello, {{ name }}!"

@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const getResponseObject = require("../../lib/get-response-object")
 
 describe("Response Object tests", () => {
@@ -14,7 +14,7 @@ describe("Response Object tests", () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: {
+      jsonBody: {
         data: response,
         count: undefined
       }
@@ -30,7 +30,7 @@ describe("Response Object tests", () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: {
+      jsonBody: {
         data: response,
         count: 2
       }

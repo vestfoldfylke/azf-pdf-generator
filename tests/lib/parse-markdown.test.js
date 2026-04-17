@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const parseMarkdown = require("../../lib/parse-markdown")
 
 const frontmatter = `---

@@ -1,7 +1,7 @@
-const { test, describe } = require("node:test")
-const assert = require("node:assert")
-const { GeneratePDFFromHTML } = require("../../../lib/pdf-generate-v2/pdfgenerator.js")
 const { readFileSync } = require("node:fs")
+const assert = require("node:assert")
+const { test, describe } = require("node:test")
+const { GeneratePDFFromHTML } = require("../../../lib/pdf-generate-v2/pdfgenerator.js")
 
 describe("Generate PDF Document from HTML", () => {
   test("Generate from valid HTML", async () => {
