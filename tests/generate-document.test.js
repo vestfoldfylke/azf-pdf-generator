@@ -1,8 +1,8 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
-const generateDocumentFunc = require("../GenerateDocument")
 const { writeFile } = require("node:fs").promises
 const { join } = require("node:path")
+const { test, describe } = require("node:test")
+const generateDocumentFunc = require("../src/functions/generate-document")
 
 const testDocumentsTypes = [
   "acos-innplasseringsbrev",
@@ -25,33 +25,44 @@ const testDocumentsTypes = [
   "smart-motereferatV2",
   "vigo-KONTRAKT-response"
 ]
+
+const makeRequest = (body) => {
+  if (body === undefined) {
+    return new Request("http://localhost/api/generate", { method: "POST" })
+  }
+  return new Request("http://localhost/api/generate", {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json" }
+  })
+}
+
 const context = { log: console.log, invocationId: "testing" }
-const req = { url: "http://localhost/api/Generate" }
 
 describe("GenerateDocument function test", () => {
   test("returns 400 when no body was provided", async () => {
-    const result = await generateDocumentFunc(context, req)
+    const result = await generateDocumentFunc(makeRequest(), context)
     assert.strictEqual(result.status, 400)
-    assert.strictEqual(result.body.error.message, "No request body received!")
+    assert.strictEqual(result.jsonBody.error.message, "No request body received!")
   })
 
   test("returns 400 if schema validation fails", async () => {
-    const result = await generateDocumentFunc(context, { ...req, body: {} })
+    const result = await generateDocumentFunc(makeRequest({}), context)
     assert.strictEqual(result.status, 400)
-    assert.strictEqual(result.body.error.message, "Invalid request body")
+    assert.strictEqual(result.jsonBody.error.message, "Invalid request body")
   })
 
   test("returns 404 if template wasn't found", async () => {
-    const result = await generateDocumentFunc(context, { ...req, body: { system: "minelev", template: "not-found" } })
+    const result = await generateDocumentFunc(makeRequest({ system: "minelev", template: "not-found" }), context)
     assert.strictEqual(result.status, 404)
-    assert.strictEqual(result.body.error.message, "Template not found!")
+    assert.strictEqual(result.jsonBody.error.message, "Template not found!")
   })
 
   testDocumentsTypes.forEach((type) => {
     const testDocument = require(`./data/${type}.json`)
     test(`${type} :: can parse and write returned base64 to .pdf file correctly`, async () => {
-      const document = await generateDocumentFunc(context, { ...req, body: testDocument })
-      const { base64 } = document.body.data
+      const document = await generateDocumentFunc(makeRequest(testDocument), context)
+      const { base64 } = document.jsonBody.data
       assert.strictEqual(typeof base64, "string")
 
       const buffer = Buffer.from(base64, "base64")

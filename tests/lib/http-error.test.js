@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const HTTPError = require("../../lib/http-error")
 
 describe("HTTPError tests", () => {
@@ -22,7 +22,7 @@ describe("HTTPError tests", () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: {
+      jsonBody: {
         error: {
           innerError: undefined,
           statusCode: 500,
@@ -42,7 +42,7 @@ describe("HTTPError tests", () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: {
+      jsonBody: {
         error: {
           statusCode: 500,
           message: "Something is wrong!",

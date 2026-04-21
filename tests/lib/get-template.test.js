@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const getTemplate = require("../../lib/get-template")
 
 describe("Get template", () => {

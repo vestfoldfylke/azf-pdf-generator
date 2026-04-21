@@ -1,5 +1,5 @@
-const { test, describe } = require("node:test")
 const assert = require("node:assert")
+const { test, describe } = require("node:test")
 const HTTPError = require("../../lib/http-error")
 const validateSchema = require("../../lib/validate-schema")
 
